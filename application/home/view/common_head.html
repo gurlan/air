@@ -7,44 +7,28 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no, email=no"/>
-    
+
 
     <title>{$info['title']??($title ? $title : $sys.title)}</title>
     <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
     <meta name="keywords" content=" {$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
 
-    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css"
-          tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" type="text/css"/>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.color.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"></script>
+    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/public.common.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"></script>
+    <script language='javascript' type='text/javascript' id='yibuHeaderScript'></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"></script>
 
-
-
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/public.common.min.js"
-            tppabs="http://img.bj.wezhan.cn/Scripts/public.common.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.color.js"
-            tppabs="http://img.bj.wezhan.cn/Scripts/jquery.color.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"></script>
-    <script language='javascript' type='text/javascript' id='yibuHeaderScript'>
-    </script>
-    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"></script>
-    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"
-            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"
-            tppabs="http://img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"></script>
-
+    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" type="text/css"/>
 
 </head>
 <body>
@@ -79,6 +63,7 @@
             }
         </style>
 
+        <div class="page-wrap">
 
         <div style="*z-index:11;*position:relative;width:100%;height:548px;margin-left:auto;margin-right:auto;background-color:">
             <div class="header page_header" style="width:1000px;height:548px;;">
@@ -101,7 +86,7 @@
                                          style='height:106px;width:252px;border-style:none;'>
                                         <div class="megwh" style="height:100%; width:100%;">
                                             <a id="autosize_view_image_3_843" href="wzsy.htm"
-                                               tppabs="http://www.h-bahn.cn/wzsy" target="_self">
+                                               target="_self">
                                                 <input id="w_view_image_3_843" type="hidden" value="180"/>
                                                 <input id="h_view_image_3_843" type="hidden" value="90"/>
                                                 <input id="canadjustwidth_view_image_3_843" type="hidden"
@@ -110,7 +95,7 @@
                                                        value="False"/>
 
                                                 <img class="lazyload" src="/static/air/img.bj.wezhan.cn/transparent.gif"
-                                                     tppabs="http://img.bj.wezhan.cn/transparent.gif"
+
                                                      data-original="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png"
                                                      alt="" style="border:none; position:relative;"/>
                                             </a>
@@ -123,7 +108,7 @@
                                         <ul id=nav_view_navigator_8_843 styleItem=Style3>
                                             <li class=w_nav_item style=width:16.66%;*width:16.33%>
                                                 <h3>
-                                                    <a href="/" >
+                                                    <a href="/">
                                                         网站首页
                                                     </a>
                                                 </h3>
@@ -131,7 +116,7 @@
                                             {volist name="category" id="vo"}
                                             <li class=w_nav_item style=width:16.66%;*width:16.33%>
                                                 <h3>
-                                                    <a href="#" >
+                                                    <a href="#">
                                                         {$vo.catname}
                                                     </a>
                                                 </h3>
