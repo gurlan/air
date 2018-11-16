@@ -23,6 +23,12 @@ class Common extends Controller{
         define('ACTION_NAME',strtolower($action));
         //导航
         $thisCat = Db::name('category')->where('id',input('catId'))->find();
+
+        if(input('catId')){
+            $parentid = Db::name('category')->where('id',input('catId'))->order('sort')->value('parentid');
+            $child = Db::name('category')->where('parentid',$parentid)->order('sort')->select();
+            $this->assign('child',$child);
+        }
         $this->assign('title',$thisCat['title']);
         $this->assign('keywords',$thisCat['keywords']);
         $this->assign('description',$thisCat['description']);
@@ -39,6 +45,7 @@ class Common extends Controller{
             cache('cate', $cate, 3600);
         }
         $this->assign('category',$cate);
+
         //广告
         $adList = cache('adList');
         if(!$adList){

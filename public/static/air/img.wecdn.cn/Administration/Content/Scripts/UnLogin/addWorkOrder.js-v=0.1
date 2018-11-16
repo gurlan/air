@@ -1,0 +1,243 @@
+$(function () {
+    // 联系电话(手机/电话皆可)验证   
+    jQuery.validator.addMethod("isPhone", function (value, element) {
+        var length = value.length;
+        var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/;
+        var tel = /^\d{3,4}-?\d{7,9}$/;
+        return this.optional(element) || (tel.test(value) || mobile.test(value));
+    }, "请正确填写您的联系方式");
+    template.config("escape", false); //是否将HTML代码作为字符串输出
+    template.config("compress", true);  //是否压缩 HTML 多余空白字符
+    var html = template('tempQuestionTypes', questionTypes);
+    $("#questionTypes").html(html);
+    $(".questionChilds li").live("click", function () {
+        $("#questionTypes li").removeClass("active");
+        $(this).addClass("active");
+        $("#questionId").val($(this).attr("value"));
+    });
+    $(".qrcode").hover(
+      function () {
+          $(this).find("span").show("fast");
+      },
+      function () {
+          $(this).find("span").hide();
+      }
+    );
+    $("#btnSubmit").click(function () {
+        $("#frmAddWorkOrder").submit();
+    });
+})
+
+//提交表单数据
+$("#frmAddWorkOrder").validate({
+    rules: {
+        workOrderTitle: {
+            required: true,
+            maxlength: 1000
+        },
+        workOrderContent: {
+            required: true,
+            maxlength: 4000,
+        },
+        workOrderPhone: {
+            required: true,
+            maxlength: 50,
+            isPhone: true
+        }
+    },
+    messages: {
+        workOrderContent: {
+            required: "请输入问题描述",
+            maxlength: "最大长度必须小于{0}个字符",
+        },
+        workOrderPhone: {
+            required: "请输入联系方式",
+            maxlength: "最大长度必须小于{0}个字符",
+            isPhone: "请填写正确的联系方式"
+        }
+    },
+    submitHandler: function () {
+        if ($("#questionId").val() == "") {
+            $.gritter.add({
+                title: '提示',
+                text: "请选择问题类型"
+            });
+            return;
+        }
+        var url, data;
+        url = "/admin/unlogin/InsertWorkOrder";
+        data = $("#frmAddWorkOrder").serializeArray();
+
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: url,
+            data: data,
+            beforeSend: function (XMLHttpRequest) {
+                $("#btnSubmit").attr("disabled", "disabled");
+            },
+            success: function (e) {
+                if (e.IsSuccess) {
+                    window.location.href = 'http://img.wecdn.cn/admin/unlogin/detail/' + e.Data.WorkOrderId; //跳转到详情页面
+                }
+                else {
+                    $.gritter.add({
+                        title: '提示',
+                        text: e.Message
+                    });
+                }
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+                $("#btn-submit").attr("disabled", "");
+            }
+        });
+    },
+    showErrors: function (map, list) {
+        this.currentElements.parents('div:first').find('.has-error').remove();
+        this.currentElements.parents('.row:first').removeClass('has-error');
+
+        $.each(list, function (index, error) {
+            var ee = $(error.element);
+            var eep = ee.parents('div:first');
+            ee.parents('.row:first').addClass('has-error');
+            eep.find('.has-error').remove();
+            eep.append('<p class="has-error help-block">' + error.message + '</p>');
+        });
+    }
+});
+
+//上传文档
+function refreshPlupload() {
+    var _filesNum = 0;  //添加文件总数
+    $("#flash_uploader").html('');  //重置上传内容
+    $("#flash_uploader").pluploadQueue({
+        runtimes : 'html5,flash,silverlight,gears,browserplus', 	//使用Flash插件
+        url: '/admin/unlogin/upload',	//服务器端响应页面
+        max_file_size: '6mb', //最大文件限制
+        chunk_size: '2mb', 	//一次上传数据大小
+        unique_names: false, 	//是否自动生成唯一名称
+        filters: [				//文件类型限制
+            { title: "全部文件", extensions: "jpg,bmp,png,gif,txt,rar,zip,doc,docx,ini,xls,xlsx,conf,html,pdf" }
+        ],
+        // 缩放图片
+        //resize: { width: 320, height: 240, quality: 80 },
+        // SWF文件位置
+         flash_swf_url: '../../../../Content/Components/customlib/plupload-2.1.9/js/Moxie.swf'/*tpa=http://img.wecdn.cn/Content/Components/customlib/plupload-2.1.9/js/Moxie.swf*/,
+        init: {
+            FileUploaded: function (up, file, info) {
+                var result = $.parseJSON(info.response);
+                if (result.IsSuccess) {
+                    if (result.Data && result.Data.workOrderDocId) {
+                        //alert(result.Data.workOrderDocId);
+                        $("#workOrderDocIds").val($("#workOrderDocIds").val() + result.Data.workOrderDocId + ',');
+
+                        if ($("#workOrderDocIds").val() != "") {
+                            $("#work-doc-list").parent("div").show();
+                        }
+                        //追加到上传附件列表中
+                        $("#work-doc-list").append('<li class="pull-left innerR padding-left-none padding-right"><span class="fileupload-preview">' + result.Data.fileName + '</span><a id="work-list-' + result.Data.workOrderDocId + '" href="javascript:deleteDoc(' + result.Data.workOrderDocId + ')" class="close fileupload-exists" data-dismiss="fileupload" style=" display:block">&times;</a></li>');
+
+                    }
+
+                    _filesNum = _filesNum - 1;
+                    if (_filesNum == 0) {
+                        $("#closeUploadModel").click();
+                    }
+                } else {
+                    $.gritter.add({
+                        title: '提示',
+                        text: result.Message
+                    });
+                }
+            },
+            FilesAdded: function (up, files) {
+                var hasEmptyFile = false;
+                if (up.files.length + $("#work-doc-list li").length > 3) {
+                    for (var i = 0; i < files.length; i++) {
+                        up.removeFile(files[i]);
+                    }
+
+                    $.gritter.add({
+                        title: '提示',
+                        text: '最多上传3个文件'
+                    });
+                    _filesNum = 0;
+                    return;
+                }
+                for (var i = 0; i < files.length; i++) {
+                    if (files[i].size == 0) {
+                        hasEmptyFile = true;
+                    }
+                }
+                if (hasEmptyFile) {
+                    for (var i = 0; i < files.length; i++) {
+                        up.removeFile(files[i]);
+                    }
+                    $.gritter.add({
+                        title: '提示',
+                        text: '上传文件不能包含空文件'
+                    });
+                    _filesNum = 0;
+                }
+                else {
+                    _filesNum += files.length;  //累计需要上传的文件总数
+                }
+            },
+            FilesRemoved: function (up, files) {
+                _filesNum = _filesNum - 1;  //当删除文件时，总数-1
+            },
+            UploadComplete: function (up, files) {
+                $.gritter.add({
+                    title: '提示',
+                    text: '上传已完成'
+                });
+            },
+            Error: function (up, args) {
+                //if (args.file) {
+                //    $.gritter.add({
+                //        title: '提示',
+                //        text: '最大上传文件不能超过2mb'
+                //    });
+                //}
+                if (args.code == -600) {
+                    $.gritter.add({
+                        title: '提示',
+                        text: '出错：单个文件不能超过2MB，所有附件不能超过6MB！'
+                    });
+                } else {
+                    $.gritter.add({
+                        title: '提示',
+                        text: '出错：' + args.message
+                    });
+                }
+                return false;
+            }
+        },
+    });
+}
+
+function deleteDoc(id) {
+    bootbox.confirm("确定要删除吗?", function (result) {
+        if (result) {
+            $.post("/admin/unlogin/DeleteDocument", { id: id }, function (data) {
+                // debugger;
+                if (data.IsSuccess) {
+                    var currWorkOrderIds = $("#workOrderDocIds").val();
+                    currWorkOrderIds = currWorkOrderIds.replace(id + ',', '');
+                    $("#workOrderDocIds").val(currWorkOrderIds);  //重置隐藏的附件Id集合
+                    $("#work-list-" + id).parent().remove(); //
+
+                    if ($("#workOrderDocIds").val() == "") {
+                        $("#work-doc-list").parent("div").hide();
+                    }
+                } else {
+                    $.gritter.add({
+                        title: '提示',
+                        text: data.Message
+                    });
+                }
+            });
+
+        }
+    });
+}

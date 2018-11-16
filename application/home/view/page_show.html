@@ -1,54 +1,1395 @@
-{include file="common/head"/}
-<!-- pagetitle start here -->
-<section id="pagetitle-wrapper">
-    <div class="pagetitle-content">
-        <h2>{$info.title}</h2>
-    </div>
-</section>
-<!-- pagetitle end here -->
-<!-- breadcrumb start here -->
-<section id="breadcrumb-wrapper">
-    <div id="breadcrumb-content">
-        <ul>
-            <li><a href="{:url('home/index/index')}" title="CLTPHP">首页</a></li>
-            <li><a href="{:url('home/'.MODULE_NAME.'/index',array('catId'=>input('catId')))}" title="{$title}">{$title}</a></li>
-            <li>{$info.title}</li>
-        </ul>
-    </div>
-</section>
-<!-- breadcrumb end here -->
-<!-- maincontent start here -->
-<section id="content-wrapper">
-    <div class="row">
-        <div class="eight columns">
-            <!-- blog post 1 -->
-            <div class="blog-post">
-                <img src="{:imgUrl($info['thumb'],'__HOME__/images/sample-images/blog-post1.jpg')}" alt="{$info.title}" />
-                <div class="row">
-                    <div class="columns">
-                        {$info.content|raw}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <link rel="icon" href="http://img.bj.wezhan.cn/2006291_favicon.ico?t=201707221426354728" />
+    <link rel="shortcut icon" href="http://img.bj.wezhan.cn/2006291_favicon.ico?t=201707221426354728" />
+    <link rel="bookmark" href="http://img.bj.wezhan.cn/2006291_favicon.ico?t=201707221426354728" />
+
+    <title>适用范围-国际空列集团H-Bahn空中轨道列车(空轨)中国官方网站 Air Train International</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="空轨 空列 空中轨道列车 空轨官方 国际空列集团官方网站 国际空列 国际空列集团 空中列车 悬挂式 悬挂式公交 快速公交 空中巴士 空中公交  airtrain skytrain H-Bahn官方 上海空列 天津空铁 天津空列 上海空列轨道技术有限公司" />
+
+    <link rel="stylesheet" href="../img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" type="text/css" />
+    <link href="../img.bj.wezhan.cn/Plugins/Designer/Content/mw-iconfont/iconfont.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/mw-iconfont/iconfont.css" rel="stylesheet" />
+    <link href="../img.bj.wezhan.cn/Plugins/Designer/Content/css/pagerStyle/pager.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/pagerStyle/pager.css" rel="stylesheet" />
+    <link href="../img.bj.wezhan.cn/Plugins/Designer/Content/css/base/css/font-awesome.min.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/base/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../img.bj.wezhan.cn/content/sitefiles2006/2006291/css/pc/274227601_zh-CN.css" tppabs="http://img.bj.wezhan.cn/content/sitefiles2006/2006291/css/pc/274227601_zh-CN.css" type="text/css" />
+
+
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Scripts/public.common.min.js" tppabs="http://img.bj.wezhan.cn/Scripts/public.common.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"></script>
+    <script src="../img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Scripts/jquery.color.js" tppabs="http://img.bj.wezhan.cn/Scripts/jquery.color.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js" tppabs="http://img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"></script>
+
+    <script language='javascript' type='text/javascript' id='yibuHeaderScript'>
+    </script>
+
+
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="../img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js" tppabs="http://img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"></script>
+
+
+
+</head>
+<body>
+<input type="hidden" id="pageinfo" value="274227601" data-type="" data-device="pc" data-entityid="" />
+<div  id="view_layout_1_277266946" class="mainSamrtView yibuSmartViewMargin"   >
+    <div class='yibuFrameContent layout_Block3_Item0' style='border-style:none;'>
+        <style type="text/css">
+            /* Style */
+            .page-wrap { clear:both; margin:0 auto; padding:0; width:auto; height:100%; }
+
+            .page-wrap .header,.page-wrap .main-wrap .main,.page-wrap .footer { position:relative; clear:both; margin:0 auto; padding:0;}
+            .page-wrap .main-wrap { clear:both; margin:0; padding:0; width:auto; }
+            .page-wrap .main-wrap .main .sidebar-left,.page-wrap .main-wrap .main .content { float:left; display:inline;}
+            .page-wrap .main-wrap .main .content { float:right;}
+            .clearfix:before,.clearfix:after { content:""; display:table;}
+            .clearfix:after { clear:both; overflow:hidden;}
+            .clearfix { zoom:1;}
+            body{
+                background-color:#666666;
+
+            }
+        </style>
+
+        <div class="page-wrap">
+            <div style="*z-index:11;*position:relative;width:100%;height:308px;margin:0 auto;background-color:">
+                <div class="header page_header yibuLayout_tempPanel" style="width:1000px;height:308px;background-color:;;">
+                    <div class='runTimeflowsmartView'><div  id="view_banner_32_277266946" class="yibuSmartViewMargin absPos"   >
+                        <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_32_277266946_Style1_Item0' style='height:73px;width:1003px;'>    <div id="fullScreen_view_banner_32_277266946" class="w_container_wrap renderfullScreen" ></div>
+                            <script>
+                                $(function () {
+                                    setRenderFullScreen($('#view_banner_32_277266946'));
+
+                                });
+                            </script>
+
+
+                            <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_32" style=width:1003px;>
+                                <div  id="view_image_3_277266946" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:106px;width:252px;border-style:none;'>    <div class="megwh" style="height:100%; width:100%;">
+                                        <a id="autosize_view_image_3_277266946" href="wzsy.htm" tppabs="http://www.h-bahn.cn/wzsy" target="_self" >
+                                            <input id="w_view_image_3_277266946" type="hidden" value="180" />
+                                            <input id="h_view_image_3_277266946" type="hidden" value="90" />
+                                            <input id="canadjustwidth_view_image_3_277266946" type="hidden" value="False" />
+                                            <input id="canadjustheight_view_image_3_277266946" type="hidden" value="False" />
+                                            <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png"  alt="" style="border:none; position:relative;" />
+
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div  id="view_navigator_8_277266946" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent navigator_Style3_Item0 view_navigator_8_277266946_Style3_Item0' style='border-style:none;'><!--nav-->
+                                        <ul id=nav_view_navigator_8_277266946 styleItem=Style3>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="wzsy.htm" tppabs="http://www.h-bahn.cn/wzsy" target=_self>
+                                                        网站首页
+                                                    </a>
+                                                </h3>
+                                            </li>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="xtgk.htm" tppabs="http://www.h-bahn.cn/xtgk" target=_self>
+                                                        系统概况
+                                                    </a>
+                                                </h3>
+                                                <ul class=w_subnav style=width:83.17px;*left:0px;>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="javascript:if(confirm('http://c1565665442.bj.wezhan.cn/xtgk  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c1565665442.bj.wezhan.cn/xtgk'" tppabs="http://c1565665442.bj.wezhan.cn/xtgk" target=_self>
+                                                            关于H-Bahn
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="sjln.htm" tppabs="http://www.h-bahn.cn/sjln" target=_self>
+                                                            设计理念
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="syfw.htm" tppabs="http://www.h-bahn.cn/syfw" target=_self>
+                                                            适用范围
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="xttd.htm" tppabs="http://www.h-bahn.cn/xttd" target=_self>
+                                                        系统特点
+                                                    </a>
+                                                </h3>
+                                            </li>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="syhyy.htm" tppabs="http://www.h-bahn.cn/syhyy" target=_self>
+                                                        商业化应用
+                                                    </a>
+                                                </h3>
+                                                <ul class=w_subnav style=width:83.17px;*left:0px;>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="javascript:if(confirm('http://c1565665442.bj.wezhan.cn/syhyy  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c1565665442.bj.wezhan.cn/syhyy'" tppabs="http://c1565665442.bj.wezhan.cn/syhyy" target=_self>
+                                                            线路案例
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="gcyy.htm" tppabs="http://www.h-bahn.cn/gcyy" target=_self>
+                                                            国产应用
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="aqjntx.htm" tppabs="http://www.h-bahn.cn/aqjntx" target=_self>
+                                                            安全节能特性
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="fzqj.htm" tppabs="http://www.h-bahn.cn/fzqj" target=_self>
+                                                            发展前景
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="xmjs.htm" tppabs="http://www.h-bahn.cn/xmjs" target=_self>
+                                                        项目建设
+                                                    </a>
+                                                </h3>
+                                                <ul class=w_subnav style=width:83.17px;*left:0px;>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="javascript:if(confirm('http://c1565665442.bj.wezhan.cn/xmjs  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c1565665442.bj.wezhan.cn/xmjs'" tppabs="http://c1565665442.bj.wezhan.cn/xmjs" target=_self>
+                                                            系统集成
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="jtxlxz.htm" tppabs="http://www.h-bahn.cn/jtxlxz" target=_self>
+                                                            交通线路选择
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="fwzx.htm" tppabs="http://www.h-bahn.cn/fwzx" target=_self>
+                                                        服务中心
+                                                    </a>
+                                                </h3>
+                                                <ul class=w_subnav style=width:83.17px;*left:0px;>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="javascript:if(confirm('http://c1565665442.bj.wezhan.cn/fwzx  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c1565665442.bj.wezhan.cn/fwzx'" tppabs="http://c1565665442.bj.wezhan.cn/fwzx" target=_self>
+                                                            系统介绍PPT下载
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="jscsjgch.htm" tppabs="http://www.h-bahn.cn/jscsjgch" target=_self>
+                                                            技术参数及国产化
+                                                        </a>
+                                                    </li>
+                                                    <li  class=w_subnav_item>
+                                                        <a href="xtwhfw.htm" tppabs="http://www.h-bahn.cn/xtwhfw" target=_self>
+                                                            系统维护服务
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                        <!--/nav-->
+                                        <input type="hidden" id="HeightVariablesStr_view_navigator_8_277266946" value="$height:31px;$Item_height:31px;$SubItem_height:31px;" />
+                                        <script>
+                                            $(function () {
+                                                slideMenu("nav_" + 'view_navigator_8_277266946');
+                                                jQuery("#nav_" + 'view_navigator_8_277266946').parent("div").css("overflow", "visible");
+                                                var isDivider = true;
+
+                                                //子导航下边框显示不出来的fix
+                                                $("#nav_" + 'view_navigator_8_277266946').children("li").each(function () {
+                                                    var Li_height = $(this).height();
+                                                    $("li", this).height(Li_height);
+
+                                                    var child_li = $("li", this);
+                                                    var topborderwidth = $("a:first", child_li).css('border-top-width');
+                                                    topborderwidth = isNaN(parseInt(topborderwidth)) ? 0 : parseInt(topborderwidth);
+                                                    var bottomborderwidth = $("a:first", child_li).css('border-bottom-width');
+                                                    bottomborderwidth = isNaN(parseInt(bottomborderwidth)) ? 0 : parseInt(bottomborderwidth);
+
+                                                    var aheight = Li_height - topborderwidth - bottomborderwidth;
+                                                    $("a", child_li).height(aheight);
+                                                });
+
+                                                jQuery("#nav_" + 'view_navigator_8_277266946').children("li").each(function () {
+                                                    var topWidth = $(this).children("h3").children("a").css("border-top-width");
+                                                    var leftWidth = $(this).children("h3").children("a").css("border-left-width");
+                                                    var bottomWidth = $(this).children("h3").children("a").css("border-bottom-width");
+                                                    if (topWidth != "0" && topWidth != "0px") {
+                                                        isDivider = false;
+                                                        return false;
+                                                    }
+                                                    if (leftWidth != "0" && leftWidth != "0px") {
+                                                        isDivider = false;
+                                                        return false;
+                                                    }
+                                                    if (bottomWidth != "0" && bottomWidth != "0px") {
+                                                        isDivider = false;
+                                                        return false;
+                                                    }
+                                                    if ($(this).children("ul").length > 0) {
+                                                        var maxWidth = $(this).children("ul").width();
+                                                        $(this).children("ul").children("li").each(function () {
+                                                            var a = $(this).children("a");
+                                                            var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 20;
+
+                                                            if (maxWidth < currentWidth)
+                                                                maxWidth = currentWidth;
+                                                        });
+                                                        $(this).children("ul").css("width", maxWidth + "px");
+                                                    }
+
+                                                });
+                                                //if (isDivider)
+                                                //    jQuery("#nav_" + 'view_navigator_8_277266946').children("li:last").children("h3").children("a").css("border-right-width", "0px");//去掉最后一项的分隔线
+
+                                                if ("False" == "False") {
+                                                    jQuery("#" + 'view_navigator_8_277266946').css("z-index", "999999");
+                                                    if (jQuery("#" + 'view_navigator_8_277266946').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
+                                                        jQuery("#" + 'view_navigator_8_277266946').parent(".w_container_content").parent().parent().css("z-index", "999998");
+                                                    }
+                                                }
+                                                SetNavSelectedStyle("nav_" + 'view_navigator_8_277266946', 'nav');//选中当前导航
+                                            })
+
+                                        </script>
+
+                                    </div>
+                                </div>
+                                <div  id="view_search_36_277266946" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden search_Style2_Item0 view_search_36_277266946_Style2_Item0' style='height:25px;width:185px;'><!--w_search-->
+                                        <!--fontfamily_select-->
+                                        <div style="position: absolute; top: 0px; filter: alpha(opacity=0);opacity:0;background-color: #777; z-index: 2; left: 0px; display:none; width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="w-search" id="Style2">
+                                            <!--w_search_head-->
+                                            <div class="w-search-container f_clearfix">
+                                                <div class="w-search-input-left">
+                                                    <input type="text" class="w-search-input" placeholder="请输入关键字" />
+                                                    <!--搜索检索-->
+                                                </div>
+                                                <button class="w-search-btn" type="button">
+                                                    <i class="iconfont"></i>
+                                                </button>
+
+                                            </div>
+                                            <!--/w_search_head-->
+                                        </div>
+                                        <!--/w_search-->
+                                        <!--/w_search-->
+                                        <script typeof="text/javascript">
+                                            $(function () {
+                                                var hoverIcon = "";
+                                                if (hoverIcon != "") {
+                                                    var obj = $("#view_search_36_277266946").find(".w-search-btn i");
+                                                    obj.unbind("hover");
+                                                    obj.hover(function () {
+                                                                $(this).html(hoverIcon);
+                                                            },
+                                                            function () {
+                                                                $(this).html("");
+                                                            });
+                                                }
+                                                var $deleteIcon = $("#view_search_36_277266946 #delete_icon");
+                                                var $searchText = $("#view_search_36_277266946 .w-search-input");
+                                                function InitDefaultValue() {
+                                                    if ($searchText.val() == '请输入关键字') {
+                                                        $searchText.val('');
+                                                        $deleteIcon.hide();
+                                                    }
+                                                    else {
+                                                        if ($searchText.val().length > 0)
+                                                            $deleteIcon.show();
+                                                    }
+                                                }
+                                                $searchText.keyup(function () {
+                                                            InitDefaultValue();
+                                                        })
+                                                        .click(function () {
+                                                            InitDefaultValue();
+                                                        });
+                                                $("#searchlist li").hover(function(){$(this).parent().find("a").removeClass("current");$(this).find("a").addClass("current")});
+                                                $('#view_search_36_277266946 .w-search-input').bind('input propertychange', function () {
+                                                    $("#view_search_36_277266946").css("z-Index", "1999999");
+                                                    var searchText = $(this).val();
+                                                    $("#view_search_36_277266946 #searchlist").show();
+                                                    $("#view_search_36_277266946 #ArticleResultTemplate a").text("在文章内搜索\"" + searchText + "\"");
+                                                    $("#view_search_36_277266946 #ProductResultTemplate a").text("在产品内搜索\"" + searchText + "\"");
+                                                });
+                                                //点击下拉的搜索项
+                                                $("#view_search_36_277266946 #searchlist li").click(function () {
+                                                    var keyword = $("#view_search_36_277266946").find(".w-search-input").val();
+                                                    var searchCategory = $(this).attr("id");
+                                                    if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
+                                                        alert("搜索关键字不能为空")
+                                                        return;
+                                                    }
+                                                    if ("False".toLocaleLowerCase() != "true") {
+                                                        if ("False".toLocaleLowerCase() == "false") {
+                                                            window.location.href = "searchresultlist-keyword=.htm"/*tpa=http://www.h-bahn.cn/searchresultlist?keyword=*/ + keyword + "&searchCategory=" + searchCategory;
+                                                        } else {
+                                                            TurnNewPageSmartView("277266946", "", "False", keyword, "false");
+                                                        }
+                                                    }
+                                                    $("#view_search_36_277266946 #searchlist").hide();
+                                                    $("#view_search_36_277266946").css("z-Index", "199");
+                                                });
+
+                                                $("#view_search_36_277266946 .w-search-btn").click(function () {
+                                                    var keyword = $("#view_search_36_277266946").find(".w-search-input").val();
+                                                    if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
+                                                        if ("2" == "1") {
+                                                            alert("Search keywords cannot be empty")
+                                                        } else {
+                                                            alert("搜索关键字不能为空")
+                                                        }
+                                                        return;
+                                                    }
+                                                    var searchCategory = "";
+                                                    var cate = 0;
+                                                    var catename = "全部";
+
+                                                    searchCategory = cate + "|" + catename;
+                                                    //新版本重新获取searchCategory
+                                                    if ("" == "product" || ("" == "all" && "on" != "on")) {
+                                                        searchCategory = "ProductResultTemplate";
+                                                    } else if ("" == "news" || ("" == "all" && "on" == "on")) {
+                                                        searchCategory = "ArticleResultTemplate";
+                                                    }
+                                                    if ("False".toLocaleLowerCase() != "true")
+
+                                                        if ("False".toLocaleLowerCase() == "false") {
+                                                            window.location.href = "searchresultlist-keyword=.htm"/*tpa=http://www.h-bahn.cn/searchresultlist?keyword=*/ + keyword + "&searchCategory=" + searchCategory;
+                                                        } else {
+                                                            if ("False".toLocaleLowerCase() != "true") {
+                                                                //老版本当前页显示
+                                                                TurnPageSmartView("277266946", "", "False", "1", "", "", cate + "|" + catename, keyword, "false");
+                                                            } else {
+                                                                //新版本（精简）
+                                                                TurnNewPageSmartView("277266946", "", "False", keyword, "false");
+                                                            }
+                                                        }
+                                                    $("#view_search_36_277266946 #searchlist").hide();
+                                                    $("#view_search_36_277266946").css("z-Index", "199");
+                                                });
+                                                $("#view_search_36_277266946 .w-search-input").keydown(function (e) {
+                                                    $("#view_search_36_277266946").css("z-Index", "1999999");
+                                                    if (e.keyCode == 13) {
+                                                        $("#view_search_36_277266946 .w-search-btn").click();
+                                                    }
+                                                });
+                                                var elementId = 'view_search_36_277266946';
+                                                var $searchWrap = $("#" + elementId + " .w-search").parent().parent();
+                                                var $searchButton = $("#" + elementId + " .w-search-btn")
+                                                var $searchInput = $("#" + elementId + " .w-search-input");
+                                                var inputBorderWidth = parseInt($searchInput.css('border-left-width')) + parseInt($searchInput.css('border-right-width'));
+                                                var inputButtonWidth = parseInt($searchButton.css('border-left-width')) + parseInt($searchButton.css('border-right-width'));
+                                                var searchInputWidth = $searchWrap.width() - $searchButton.width() - inputBorderWidth - inputButtonWidth - 15;
+                                                var searchInputHeight = $searchButton.height();
+                                                if (searchInputWidth <= 70) {
+                                                    searchInputWidth = 70;
+                                                    $("#" + elementId).children().eq(0).width(90 + $searchButton.width());
+                                                }
+                                                $("#" + elementId + " .w-search").width("auto");
+                                                $searchInput.width(searchInputWidth);
+                                                $searchInput.height($("#" + elementId).height() - 6);
+                                                $searchInput.css("line-height",($("#" + elementId).height() - 6)+"px");
+                                                $searchButton.height($("#" + elementId).height() - 6);
+                                                $searchButton.css("line-height", ($("#" + elementId).height() - 6) + "px");
+                                                $("#view_search_36_277266946 .yibuFrameContent").removeClass("overflow_hidden");
+                                                $("#" + elementId).find("#searchlist").css("top", $searchInput.css("height"))
+                                            });
+
+                                        </script></div>
+                                </div>
+                                <div  id="view_image_62_277266946" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:18px;width:47px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                        <a id="autosize_view_image_62_277266946" href="yibupage/277268706.htm" tppabs="http://www.h-bahn.cn/yibupage/277268706" target="_self" >
+                                            <input id="w_view_image_62_277266946" type="hidden" value="480" />
+                                            <input id="h_view_image_62_277266946" type="hidden" value="300" />
+                                            <input id="canadjustwidth_view_image_62_277266946" type="hidden" value="False" />
+                                            <input id="canadjustheight_view_image_62_277266946" type="hidden" value="False" />
+                                            <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300398__c_u4prMCfjPPGOKMJMprydOBvERDuQBDk-232NpLa1ToaXNBhh1BJx8eDK7YVYCMuvJWjw0AFEvghwqLZi0s2COA--_321823d3-895d-402e-8b51-a3b4b8f48816_resize_picture.gif.png" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300398__c_u4prMCfjPPGOKMJMprydOBvERDuQBDk-232NpLa1ToaXNBhh1BJx8eDK7YVYCMuvJWjw0AFEvghwqLZi0s2COA--_321823d3-895d-402e-8b51-a3b4b8f48816_resize_picture.gif"  alt="" style="border:none; position:relative;" />
+
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div  id="view_image_63_277266946" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:18px;width:49px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                        <a id="autosize_view_image_63_277266946" href="javascript:void(0)" target="_self" >
+                                            <input id="w_view_image_63_277266946" type="hidden" value="480" />
+                                            <input id="h_view_image_63_277266946" type="hidden" value="300" />
+                                            <input id="canadjustwidth_view_image_63_277266946" type="hidden" value="False" />
+                                            <input id="canadjustheight_view_image_63_277266946" type="hidden" value="False" />
+                                            <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300393__c_5hWfXVxNL-vmKwXDX86s7VymqDoUy1HxWoZY-ZrwyAbQMuQ8mJrQ205V2TW10usXNKPvlOu6VFJM-yYLkDmLUg--_372dbbca-2bc3-469e-84e0-0ff9fc970f54_resize_picture.gif.png" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300393__c_5hWfXVxNL-vmKwXDX86s7VymqDoUy1HxWoZY-ZrwyAbQMuQ8mJrQ205V2TW10usXNKPvlOu6VFJM-yYLkDmLUg--_372dbbca-2bc3-469e-84e0-0ff9fc970f54_resize_picture.gif"  alt="" style="border:none; position:relative;" />
+
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div  id="view_text_35_277266946" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:26px;width:143px;'>
+                                        <style type="text/css">
+                                            #view_text_35_277266946_txt ul{ padding-left:20px;}
+                                        </style>
+                                        <div id='view_text_35_277266946_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                            <div class="editableContent " style="line-height:1.5;">
+                                                <p><span style="color: rgb(255, 255, 224); font-family: 宋体; line-height: 24px; widows: auto;">国际空列集团欢迎您</span></p>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            Pagination('view_text_35_277266946_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_35_277266946);
+
+                                            function textPageCallbackview_text_35_277266946() {
+
+                                                $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                if ($("#view_text_35_277266946").parent(".w_tab_container_item ").length > 0) {
+                                                    $("#view_text_35_277266946").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                }
+                                                if ($("#view_text_35_277266946").parents(".w_tab_container").length > 0) {
+                                                    $("#view_text_35_277266946").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                }
+                                                if ($("#view_text_35_277266946").parents(".w_tab").length > 0) {
+                                                    $("#view_text_35_277266946").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                }
+
+
+                                                yiburecomputeLayoutHeight();
+                                                initScrollHeight_view_text_35_277266946();
+
+                                            }
+                                            function initScrollHeight_view_text_35_277266946() {
+                                                var currentHeight = $("#view_text_35_277266946").height();
+                                                var oldHeight = window["view_text_35_277266946" + "_height"];
+                                                window["view_text_35_277266946" + "_height"] = currentHeight;
+                                                if (oldHeight != undefined) {
+                                                    var subtract = currentHeight - oldHeight;
+                                                    if (subtract < 0) {
+
+                                                        if ($("#view_text_35_277266946").parents(".mainSamrtView").length > 0) {
+                                                            $("#view_text_35_277266946").parents(".mainSamrtView").each(function () {
+                                                                if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                    var height = $(this).height();
+                                                                    var oheight = $(this).attr("oheight");
+
+                                                                    var expandh = $(this).attr("expandh");
+                                                                    if (oheight != undefined && expandh != undefined) {
+                                                                        oheight = parseInt(oheight);
+                                                                        expandh = parseInt(expandh);
+                                                                        expandh = expandh + subtract;
+                                                                        var newHeight = oheight + expandh;
+                                                                        $(this).height(newHeight);
+                                                                        $(this).attr("expandh", expandh);
+                                                                        if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                            if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                $(this).children(".yibuFrameContent").height(newHeight);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                            });
+                                                        }
+                                                    }
+                                                }
+                                                var $txtControl = $('#view_text_35_277266946');
+                                                $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                            }
+                                            $(function () {
+                                                window["view_text_35_277266946" + "_height"] = $("#view_text_35_277266946").height();
+                                                var $txtControl = $('#view_text_35_277266946');
+                                                $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <script type="text/javascript">
+                                function setLayoutHeight() {
+                                    var bannerheight = $("#view_banner_32_277266946").css("height");
+                                    $("#view_banner_32_277266946").children(".yibuFrameContent").css("height", bannerheight);
+                                };
+                            </script></div>
+                    </div>
+                        <div  id="view_banner_56_277266946" class="yibuSmartViewMargin absPos"   >
+                            <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_56_277266946_Style1_Item0' style='height:232px;width:1006px;'>    <div id="fullScreen_view_banner_56_277266946" class="w_container_wrap renderfullScreen" ></div>
+                                <script>
+                                    $(function () {
+                                        setRenderFullScreen($('#view_banner_56_277266946'));
+
+                                    });
+                                </script>
+
+
+                                <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_56" style=width:1006px;>
+                                    <div  id="view_photoalbum_37_277266946" class="yibuSmartViewMargin absPos"   >
+                                        <div class='yibuFrameContent overflow_hidden photoalbum_Style1_Item0 view_photoalbum_37_277266946_Style1_Item0' style='height:220px;width:1000px;'><div id="w_slider_view_photoalbum_37_277266946" class="w_slider w_sliders_view_photoalbum_37_277266946" style="width:100%;height:100%;">
+                                            <div class="w_slider_num">
+                                                <ul   style="display:none;"   >
+
+
+                                                    <li style="font-size:12px;">1</li>
+                                                    <li style="font-size:12px;">2</li>
+                                                    <li style="font-size:12px;">3</li>
+                                                    <li style="font-size:12px;">4</li>
+                                                </ul>
+                                            </div>
+                                            <div class="w_slider_img">
+                                                <ul>
+                                                    <li style="width:1000px; height:220px;">
+                                                        <a title="001"
+                                                           href="javascript:void(0)"    target="_self">
+                                                            <img style="height:220px" class="lazyload" src="../img.bj.wezhan.cn/transparent.gif" tppabs="http://img.bj.wezhan.cn/transparent.gif" data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/2501500_001.jpg" onload="DynamicLoad(this)" title="001" alt="图片0" />
+                                                        </a>
+                                                    </li>
+                                                    <li style="width:1000px; height:220px;">
+                                                        <a title="002"
+                                                           href="javascript:void(0)"    target="_self">
+                                                            <img style="height:220px" class="lazyload" src="../img.bj.wezhan.cn/transparent.gif" tppabs="http://img.bj.wezhan.cn/transparent.gif" data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/2501502_002.jpg" onload="DynamicLoad(this)" title="002" alt="图片1" />
+                                                        </a>
+                                                    </li>
+                                                    <li style="width:1000px; height:220px;">
+                                                        <a title="003"
+                                                           href="javascript:void(0)"    target="_self">
+                                                            <img style="height:220px" class="lazyload" src="../img.bj.wezhan.cn/transparent.gif" tppabs="http://img.bj.wezhan.cn/transparent.gif" data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/2501505_003.jpg" onload="DynamicLoad(this)" title="003" alt="图片2" />
+                                                        </a>
+                                                    </li>
+                                                    <li style="width:1000px; height:220px;">
+                                                        <a title="004"
+                                                           href="javascript:void(0)"    target="_self">
+                                                            <img style="height:220px" class="lazyload" src="../img.bj.wezhan.cn/transparent.gif" tppabs="http://img.bj.wezhan.cn/transparent.gif" data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/2501506_004.jpg" onload="DynamicLoad(this)" title="004" alt="图片3" />
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+                                            <a   style="display:none;"     class="prev" href="javascript:void(0)"></a>
+                                            <a   style="display:none;"     class="next" href="javascript:void(0)"></a>
+
+                                        </div>
+
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $(".w_sliders_view_photoalbum_37_277266946").slide({
+                                                        mainCell: $(".w_sliders_view_photoalbum_37_277266946 .w_slider_img ul"),
+                                                        titCell: $(".w_sliders_view_photoalbum_37_277266946 .w_slider_num li"),
+                                                        effect: "fade",
+                                                        autoPlay: "true",
+                                                        trigger: "click",
+                                                        interTime: "3000"
+                                                    });
+                                                });
+
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <script type="text/javascript">
+                                    function setLayoutHeight() {
+                                        var bannerheight = $("#view_banner_56_277266946").css("height");
+                                        $("#view_banner_56_277266946").children(".yibuFrameContent").css("height", bannerheight);
+                                    };
+                                </script></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="four columns">
-            <aside>
-                <h5>推荐文章</h5>
-                <ul class="popular-list">
-                    {clist db='article' id='vo' where="(posid = 1 or posid=2)" limit='8'}
-                    <li>
-                        <img src="{:imgUrl($vo['thumb'],'/static/home/images/portfolio-thumb/p'.$k.'.jpg')}" alt="" class="img-border" />
-                        <p class="popular-title">
-                            <a href="{:url('home/'.$vo['catdir'].'/info',array('id'=>$vo['id'],'catId'=>$vo['catid']))}" style="{:style($vo['title_style'])}" title="{$vo.title}">{$vo.title}</a>
-                        </p>
-                        <p class="comment-count"><a href="single.html">{$vo.hits}</a></p>
-                        <p class="author-name">{$vo.username}</p>
-                    </li>
-                    {/clist}
-                </ul>
-            </aside>
-        </div>
-    </div>
-</section>
-<!-- maincontent end here -->
-{include file="common/footer"/}
+            <div class="main-wrap clearfix" style="*z-index:10;*position:relative;width:100%;margin-left:auto;margin-right:auto;;background-color:">
+                <div class="main clearfix page_main" style="width:1000px;margin-left:auto;margin-right:auto;">
+                    <div class="sidebar-left page_sidebar yibuLayout_tempPanel" id="yibuLayout_sidebar" style="width:220px;height:575px;background-color:#ffffff;;">
+                        <div class="yibuFrameContent">
+                            <div class='runTimeflowsmartView'><div  id="view_banner_57_277266946" class="yibuSmartViewMargin absPos"   >
+                                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_57_277266946_Style1_Item0' style='height:448px;width:219px;'>    <script>
+                                    $(function () {
+                                        $("#view_banner_57_277266946").children("div").css("overflow", "visible");
+                                    })
+                                </script>
+
+
+                                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_57" >
+                                        <div  id="view_text_58_277266946" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:22px;width:91px;'>
+                                                <style type="text/css">
+                                                    #view_text_58_277266946_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_58_277266946_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <p><span style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">系统概况</span></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_58_277266946_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_58_277266946);
+
+                                                    function textPageCallbackview_text_58_277266946() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_58_277266946").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_58_277266946").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_58_277266946").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_58_277266946").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_58_277266946").parents(".w_tab").length > 0) {
+                                                            $("#view_text_58_277266946").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_58_277266946();
+
+                                                    }
+                                                    function initScrollHeight_view_text_58_277266946() {
+                                                        var currentHeight = $("#view_text_58_277266946").height();
+                                                        var oldHeight = window["view_text_58_277266946" + "_height"];
+                                                        window["view_text_58_277266946" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_58_277266946").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_58_277266946").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_58_277266946');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_58_277266946" + "_height"] = $("#view_text_58_277266946").height();
+                                                        var $txtControl = $('#view_text_58_277266946');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_navigator_59_277266946" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent navigator_Style5_Item0 view_navigator_59_277266946_Style5_Item0'><!--nav-->
+                                                <ul id=nav_view_navigator_59_277266946 styleItem=Style5>
+                                                    <li class=w_vnav_item>
+                                                        <h3>
+                                                            <a href="javascript:if(confirm('http://c1565665442.bj.wezhan.cn/xtgk  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://c1565665442.bj.wezhan.cn/xtgk'" tppabs="http://c1565665442.bj.wezhan.cn/xtgk" style="width: 143px" target=_self>
+                                                                关于H-Bahn
+                                                            </a>
+                                                        </h3>
+                                                    </li>
+                                                    <li class=w_vnav_item>
+                                                        <h3>
+                                                            <a href="sjln.htm" tppabs="http://www.h-bahn.cn/sjln" style="width: 143px" target=_self>
+                                                                设计理念
+                                                            </a>
+                                                        </h3>
+                                                    </li>
+                                                    <li class=w_vnav_item>
+                                                        <h3>
+                                                            <a href="syfw.htm" tppabs="http://www.h-bahn.cn/syfw" style="width: 143px" target=_self>
+                                                                适用范围
+                                                            </a>
+                                                        </h3>
+                                                    </li>
+                                                </ul>
+
+                                                <!--/nav-->
+
+
+                                                <input type="hidden" id="HeightVariablesStr_view_navigator_59_277266946" value="$Item_height:28.67px;$SubItem_height:28.67px;" />
+                                                <script>
+                                                    $(function () {
+                                                        jQuery("#nav_" + 'view_navigator_59_277266946').parent("div").css("overflow", "visible");
+                                                        var isDivider = true;
+                                                        jQuery("#nav_" + 'view_navigator_59_277266946').children("li").each(function () {
+                                                            var topWidth = $(this).children("h3").children("a").css("border-top-width");
+                                                            var leftWidth = $(this).children("h3").children("a").css("border-left-width");
+                                                            var rightWidth = $(this).children("h3").children("a").css("border-right-width");
+                                                            if (topWidth != "0" && topWidth != "0px") {
+                                                                isDivider = false;
+                                                                return false;
+                                                            }
+                                                            if (leftWidth != "0" && leftWidth != "0px") {
+                                                                isDivider = false;
+                                                                return false;
+                                                            }
+                                                            if (rightWidth != "0" && rightWidth != "0px") {
+                                                                isDivider = false;
+                                                                return false;
+                                                            }
+                                                            if ($(this).children("ul").length > 0) {
+                                                                var maxWidth = $(this).children("ul").width();
+                                                                $(this).children("ul").children("li").each(function () {
+                                                                    var a = $(this).children("a");
+                                                                    var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 46;
+
+                                                                    if (maxWidth < currentWidth)
+                                                                        maxWidth = currentWidth;
+                                                                });
+                                                                $(this).children("ul").css({ "width": maxWidth + "px", "right": "-" + maxWidth + "px" });
+                                                            }
+                                                        });
+                                                        //if (isDivider)
+                                                        //    jQuery("#nav_" + 'view_navigator_59_277266946').children("li:last").children("h3").children("a").css("border-bottom-width", "0px");//去掉最后一项的分隔线
+                                                        if ("False" == "False") {
+                                                            jQuery("#" + 'view_navigator_59_277266946').css("z-index", "999999");
+                                                            if (jQuery("#" + 'view_navigator_59_277266946').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
+                                                                jQuery("#" + 'view_navigator_59_277266946').parent(".w_container_content").parent().parent().css("z-index", "999998");
+                                                            }
+                                                        }
+                                                        SetNavSelectedStyle("nav_" + 'view_navigator_59_277266946', 'vnav');//选中当前导航
+                                                    })
+
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_60_277266946" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:223px;width:182px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_60_277266946" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_60_277266946" type="hidden" value="178" />
+                                                    <input id="h_view_image_60_277266946" type="hidden" value="214" />
+                                                    <input id="canadjustwidth_view_image_60_277266946" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_60_277266946" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285250_tu5_11dc7616-2e91-4299-9673-694339a21195_resize_picture.png" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285250_tu5_11dc7616-2e91-4299-9673-694339a21195_resize_picture.png"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript">
+                                        function setLayoutHeight() {
+                                            var bannerheight = $("#view_banner_57_277266946").css("height");
+                                            $("#view_banner_57_277266946").children(".yibuFrameContent").css("height", bannerheight);
+                                        };
+                                    </script></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content yibuTemplateBody page_container yibuLayout_Body" id="yibuLayout_container" style="width:780px;background-color:#ffffff;;">
+                        <div  id="view_main_1_274227601" class="mainSamrtView yibuSmartViewMargin"   >
+                            <div class='yibuFrameContent main__Item0' style='height:1855px;width:100%;'><div class='runTimeflowsmartView'><div  id="view_banner_10001_274227601" class="yibuSmartViewMargin absPos"   >
+                                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_10001_274227601_Style1_Item0' style='height:1851px;width:780px;'>    <script>
+                                    $(function () {
+                                        $("#view_banner_10001_274227601").children("div").css("overflow", "visible");
+                                    })
+                                </script>
+
+
+                                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_10001" >
+                                        <div  id="view_text_10002_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:24px;width:133px;'>
+                                                <style type="text/css">
+                                                    #view_text_10002_274227601_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_10002_274227601_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <p><span style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">适用范围</span></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10002_274227601_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_10002_274227601);
+
+                                                    function textPageCallbackview_text_10002_274227601() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_10002_274227601").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_10002_274227601").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10002_274227601").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_10002_274227601").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10002_274227601").parents(".w_tab").length > 0) {
+                                                            $("#view_text_10002_274227601").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_10002_274227601();
+
+                                                    }
+                                                    function initScrollHeight_view_text_10002_274227601() {
+                                                        var currentHeight = $("#view_text_10002_274227601").height();
+                                                        var oldHeight = window["view_text_10002_274227601" + "_height"];
+                                                        window["view_text_10002_274227601" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_10002_274227601").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_10002_274227601").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_10002_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_10002_274227601" + "_height"] = $("#view_text_10002_274227601").height();
+                                                        var $txtControl = $('#view_text_10002_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_line_10003_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden line_Style1_Item0 view_line_10003_274227601_Style1_Item0' style='height:19px;width:753px;'>
+                                                <div class="w_line"></div></div>
+                                        </div>
+                                        <div  id="view_text_10004_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:125px;width:749px;'>
+                                                <style type="text/css">
+                                                    #view_text_10004_274227601_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_10004_274227601_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <h5 style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; "><strong>关于中等运量<br/></strong></h5><h5 style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; text-indent: 2em;"><strong>H-Bahn空中轨道列车属于轻型、中等速度、中等运量的交通工具。中运量公交系统是介于常规公交和轨道交通之间的中运能的骨干公交方式。</strong></h5><h5 style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; text-indent: 2em;"><strong>中运量型轻轨交通在都市圈的公共交通中发挥着重要作用。特别是对于一些规模适中的区域性都市圈和规模较小的地方性都市圈来说，中运量型轻轨交通因其具有安全准时、快速灵活、舒适方便等特点，运量及各项技术指标都优于其他城市道路交通工具。</strong></h5><p><br/></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10004_274227601_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_10004_274227601);
+
+                                                    function textPageCallbackview_text_10004_274227601() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_10004_274227601").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_10004_274227601").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10004_274227601").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_10004_274227601").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10004_274227601").parents(".w_tab").length > 0) {
+                                                            $("#view_text_10004_274227601").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_10004_274227601();
+
+                                                    }
+                                                    function initScrollHeight_view_text_10004_274227601() {
+                                                        var currentHeight = $("#view_text_10004_274227601").height();
+                                                        var oldHeight = window["view_text_10004_274227601" + "_height"];
+                                                        window["view_text_10004_274227601" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_10004_274227601").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_10004_274227601").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_10004_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_10004_274227601" + "_height"] = $("#view_text_10004_274227601").height();
+                                                        var $txtControl = $('#view_text_10004_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10005_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:232px;width:344px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10005_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10005_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10005_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10005_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10005_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285395__m_gw_yqnvZxsIrrq9KAC-7TKGEKxFCP8VZwSNM2VaPspmgaIbSF9Ku3VZEZ7NP46tGc-9V2SX3ZkPYApu1CiLerySq3OOlXec7Y_1a69cc4c-6869-49cb-8433-a55c6de99ca6_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285395__m_gw_yqnvZxsIrrq9KAC-7TKGEKxFCP8VZwSNM2VaPspmgaIbSF9Ku3VZEZ7NP46tGc-9V2SX3ZkPYApu1CiLerySq3OOlXec7Y_1a69cc4c-6869-49cb-8433-a55c6de99ca6_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10006_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:230px;width:350px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10006_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10006_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10006_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10006_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10006_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285397__m_gw_yqnvZxsIrrq9KAC-7TKGELV5NCOmf4Ch-OnS0GlkYJF8M_oG_2V94H0E_fvFhf9ICpvckUWl02aJqwq0ubIarHluPQ-DfJ_802cd5cd-5060-4cb0-bd65-98902d78e64e_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285397__m_gw_yqnvZxsIrrq9KAC-7TKGELV5NCOmf4Ch-OnS0GlkYJF8M_oG_2V94H0E_fvFhf9ICpvckUWl02aJqwq0ubIarHluPQ-DfJ_802cd5cd-5060-4cb0-bd65-98902d78e64e_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_text_10007_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:54px;width:749px;'>
+                                                <style type="text/css">
+                                                    #view_text_10007_274227601_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_10007_274227601_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <h5 style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; "><strong>中运量型轻轨交通造价较低、投资回报快，对环境的污染较小，与任何类型的城市交通网络都能连接，增添了交通网络建设的灵活性，又可以根据交通流量变化改变编组方式。</strong></h5><p><br/></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10007_274227601_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_10007_274227601);
+
+                                                    function textPageCallbackview_text_10007_274227601() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_10007_274227601").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_10007_274227601").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10007_274227601").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_10007_274227601").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10007_274227601").parents(".w_tab").length > 0) {
+                                                            $("#view_text_10007_274227601").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_10007_274227601();
+
+                                                    }
+                                                    function initScrollHeight_view_text_10007_274227601() {
+                                                        var currentHeight = $("#view_text_10007_274227601").height();
+                                                        var oldHeight = window["view_text_10007_274227601" + "_height"];
+                                                        window["view_text_10007_274227601" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_10007_274227601").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_10007_274227601").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_10007_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_10007_274227601" + "_height"] = $("#view_text_10007_274227601").height();
+                                                        var $txtControl = $('#view_text_10007_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10008_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:346px;width:655px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10008_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10008_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10008_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10008_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10008_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285401__m_gw_yqnvZxsIrrq9KAC-7TKGEOyPhpPQXVlEiwU6hoQKA5C0AHUDFvXnqu3u1G5NsCPYzx9WqTlR7rd6q2GX7yXPcdIIve6FA5_44a43241-bd7b-4518-a08a-4fc67a305a3e_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285401__m_gw_yqnvZxsIrrq9KAC-7TKGEOyPhpPQXVlEiwU6hoQKA5C0AHUDFvXnqu3u1G5NsCPYzx9WqTlR7rd6q2GX7yXPcdIIve6FA5_44a43241-bd7b-4518-a08a-4fc67a305a3e_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_text_10009_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:81px;width:745px;'>
+                                                <style type="text/css">
+                                                    #view_text_10009_274227601_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_10009_274227601_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <h5 align="left" style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; text-indent: 2em;"><strong>H-Bahn空中轨道列车属于轻型、中速、中运量的交通工具，广泛适用于：</strong></h5><h5 align="left" style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; text-indent: 2em;"><strong>√大中城市轨道交通干线；</strong></h5><h5 align="left" style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; text-indent: 2em;"><strong>√特大都市的局部交通线、延伸线、郊区线；</strong></h5><p><br/></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10009_274227601_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_10009_274227601);
+
+                                                    function textPageCallbackview_text_10009_274227601() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_10009_274227601").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_10009_274227601").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10009_274227601").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_10009_274227601").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10009_274227601").parents(".w_tab").length > 0) {
+                                                            $("#view_text_10009_274227601").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_10009_274227601();
+
+                                                    }
+                                                    function initScrollHeight_view_text_10009_274227601() {
+                                                        var currentHeight = $("#view_text_10009_274227601").height();
+                                                        var oldHeight = window["view_text_10009_274227601" + "_height"];
+                                                        window["view_text_10009_274227601" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_10009_274227601").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_10009_274227601").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_10009_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_10009_274227601" + "_height"] = $("#view_text_10009_274227601").height();
+                                                        var $txtControl = $('#view_text_10009_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10010_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:219px;width:309px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10010_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10010_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10010_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10010_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10010_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285412__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfG-pDhlATPuYzwID19s4REL9GiXVaV6V26xlHKbpawkUiFvxkNltmW9zE5oHIqtW_ccae6ddd-efad-4ffd-9229-0ce49ddd1099_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285412__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfG-pDhlATPuYzwID19s4REL9GiXVaV6V26xlHKbpawkUiFvxkNltmW9zE5oHIqtW_ccae6ddd-efad-4ffd-9229-0ce49ddd1099_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10011_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:214px;width:309px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10011_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10011_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10011_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10011_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10011_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285413__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfGkYRz9hFf8_g2ndA8xjWyb8JkhgZoE1p-G0tdxOB7RBNb77FSj2lGYdkHlj_ud8_e380380f-0f45-4b8a-adbc-ca0e8068eea8_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285413__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfGkYRz9hFf8_g2ndA8xjWyb8JkhgZoE1p-G0tdxOB7RBNb77FSj2lGYdkHlj_ud8_e380380f-0f45-4b8a-adbc-ca0e8068eea8_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_text_10012_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:244px;width:746px;'>
+                                                <style type="text/css">
+                                                    #view_text_10012_274227601_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_10012_274227601_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <h5 style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; "><strong>H-Bahn空中轨道列车属于轻型、中速、中运量的交通工具，广泛适用于：<br/>&nbsp;√旅游区、主题乐园等往返线或景点间的环线交通；<br/>&nbsp;√高铁、城际铁路、长途汽车客运站、机场、码头联络线；<br/>&nbsp;√机场航站楼间的接驳线；<br/>H-Bahn空中轨道列车属于轻型、中速、中运量的交通工具，广泛适用于：<br/>&nbsp;√地铁、轻轨、长途客运站至城市繁华商贸区、居民区联络线；<br/>&nbsp;√大型商务区、开发区、功能场馆等的内部交通线；<br/>H-Bahn空中轨道列车属于轻型、中速、中运量的交通工具，广泛适用于：<br/>&nbsp;√特别地，适应于地面交通趋于饱和、地下工程条件受限的特殊地区地段，如：多山丘陵地区、沟河较多地段、地下文物丰富、地下土质结构特殊、地下泉水较多等城市、转弯半径小或相对狭窄的道路、拆迁成本高的区域等；</strong></h5><p><br/></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10012_274227601_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_10012_274227601);
+
+                                                    function textPageCallbackview_text_10012_274227601() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_10012_274227601").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_10012_274227601").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10012_274227601").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_10012_274227601").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10012_274227601").parents(".w_tab").length > 0) {
+                                                            $("#view_text_10012_274227601").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_10012_274227601();
+
+                                                    }
+                                                    function initScrollHeight_view_text_10012_274227601() {
+                                                        var currentHeight = $("#view_text_10012_274227601").height();
+                                                        var oldHeight = window["view_text_10012_274227601" + "_height"];
+                                                        window["view_text_10012_274227601" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_10012_274227601").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_10012_274227601").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_10012_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_10012_274227601" + "_height"] = $("#view_text_10012_274227601").height();
+                                                        var $txtControl = $('#view_text_10012_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10013_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:214px;width:307px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10013_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10013_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10013_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10013_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10013_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285416__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfGP9viDP-qq2jizdM-e2-BK1p8i_bHx3uOGn8vKUYdWIzSUY6Mk8rOXAMq5Z8fAW_77d10814-8d1b-47bd-8ba4-b4e8f587f4bb_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285416__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfGP9viDP-qq2jizdM-e2-BK1p8i_bHx3uOGn8vKUYdWIzSUY6Mk8rOXAMq5Z8fAW_77d10814-8d1b-47bd-8ba4-b4e8f587f4bb_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_image_10014_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:221px;width:307px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                                <a id="autosize_view_image_10014_274227601" href="javascript:void(0)" target="_self" >
+                                                    <input id="w_view_image_10014_274227601" type="hidden" value="480" />
+                                                    <input id="h_view_image_10014_274227601" type="hidden" value="300" />
+                                                    <input id="canadjustwidth_view_image_10014_274227601" type="hidden" value="False" />
+                                                    <input id="canadjustheight_view_image_10014_274227601" type="hidden" value="False" />
+                                                    <img  src="../img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285419__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfG-pDhlATPuYzwID19s4REL9GiXVaV6V26xlHKbpawkUjMFqI9SWbPm5K82fn2yn_4f68b593-bff6-406c-80c6-7f8c8c70bffd_resize_picture.jpeg" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285419__m_gw_yqnvZxsIrrq9KAC-7TKGEDl_BoxLeFfG-pDhlATPuYzwID19s4REL9GiXVaV6V26xlHKbpawkUjMFqI9SWbPm5K82fn2yn_4f68b593-bff6-406c-80c6-7f8c8c70bffd_resize_picture.jpeg"  alt="" style="border:none; position:relative;" />
+
+                                                </a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div  id="view_text_10015_274227601" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:55px;width:400px;'>
+                                                <style type="text/css">
+                                                    #view_text_10015_274227601_txt ul{ padding-left:20px;}
+                                                </style>
+                                                <div id='view_text_10015_274227601_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent " style="line-height:1.5;">
+                                                        <h5 style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; white-space: normal; widows: auto; "><strong>轮子是在封闭环境下运行的，所以不受恶劣天气影响。无论冰冻、大雪、暴风雨还是浓雾等恶劣天气，列车可照常运行。</strong></h5><p><br/></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10015_274227601_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_10015_274227601);
+
+                                                    function textPageCallbackview_text_10015_274227601() {
+
+                                                        $(".absPos").each(function () { $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '') });
+
+                                                        if ($("#view_text_10015_274227601").parent(".w_tab_container_item ").length > 0) {
+                                                            $("#view_text_10015_274227601").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10015_274227601").parents(".w_tab_container").length > 0) {
+                                                            $("#view_text_10015_274227601").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+                                                        if ($("#view_text_10015_274227601").parents(".w_tab").length > 0) {
+                                                            $("#view_text_10015_274227601").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                        }
+
+
+                                                        yiburecomputeLayoutHeight();
+                                                        initScrollHeight_view_text_10015_274227601();
+
+                                                    }
+                                                    function initScrollHeight_view_text_10015_274227601() {
+                                                        var currentHeight = $("#view_text_10015_274227601").height();
+                                                        var oldHeight = window["view_text_10015_274227601" + "_height"];
+                                                        window["view_text_10015_274227601" + "_height"] = currentHeight;
+                                                        if (oldHeight != undefined) {
+                                                            var subtract = currentHeight - oldHeight;
+                                                            if (subtract < 0) {
+
+                                                                if ($("#view_text_10015_274227601").parents(".mainSamrtView").length > 0) {
+                                                                    $("#view_text_10015_274227601").parents(".mainSamrtView").each(function () {
+                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                            var height = $(this).height();
+                                                                            var oheight = $(this).attr("oheight");
+
+                                                                            var expandh = $(this).attr("expandh");
+                                                                            if (oheight != undefined && expandh != undefined) {
+                                                                                oheight = parseInt(oheight);
+                                                                                expandh = parseInt(expandh);
+                                                                                expandh = expandh + subtract;
+                                                                                var newHeight = oheight + expandh;
+                                                                                $(this).height(newHeight);
+                                                                                $(this).attr("expandh", expandh);
+                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                        var $txtControl = $('#view_text_10015_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    }
+                                                    $(function () {
+                                                        window["view_text_10015_274227601" + "_height"] = $("#view_text_10015_274227601").height();
+                                                        var $txtControl = $('#view_text_10015_274227601');
+                                                        $txtControl.find('img').css({ 'max-width': $txtControl.width() + 'px' });
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript">
+                                        function setLayoutHeight() {
+                                            var bannerheight = $("#view_banner_10001_274227601").css("height");
+                                            $("#view_banner_10001_274227601").children(".yibuFrameContent").css("height", bannerheight);
+                                        };
+                                    </script></div>
+                            </div>
+                            </div></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>

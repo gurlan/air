@@ -63,6 +63,7 @@ class Index extends Common{
     }
     public function senmsg(){
         $data = input('post.');
+
         $data['addtime'] = time();
         $data['ip'] = getIp();
         db('message')->insert($data);

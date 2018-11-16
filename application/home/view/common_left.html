@@ -1,0 +1,161 @@
+<div class="sidebar-left page_sidebar yibuLayout_tempPanel" id="yibuLayout_sidebar" style="width:220px;height:575px;background-color:#ffffff;;">
+    <div class="yibuFrameContent">
+        <div class='runTimeflowsmartView'>
+            <div id="view_banner_57_277266946" class="yibuSmartViewMargin absPos">
+                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_57_277266946_Style1_Item0'
+                     style='height:448px;width:219px;'>
+                    <script>
+                        $(function () {
+                            $("#view_banner_57_277266946").children("div").css("overflow", "visible");
+                        })
+                    </script>
+
+
+                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0"
+                         id="flowsmartView_57">
+                        <div id="view_text_58_277266946" class="yibuSmartViewMargin absPos">
+                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                 style='height:22px;width:91px;'>
+                                <style type="text/css">
+                                    #view_text_58_277266946_txt ul {
+                                        padding-left: 20px;
+                                    }
+                                </style>
+                                <div id='view_text_58_277266946_txt'
+                                     style="cursor:default; height:100%; width:100%;">
+                                    <div class="editableContent " style="line-height:1.5;">
+                                        <p><span
+                                                style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">系统概况</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <script>
+                                    Pagination('view_text_58_277266946_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_58_277266946);
+
+                                    function textPageCallbackview_text_58_277266946() {
+
+                                        $(".absPos").each(function () {
+                                            $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '')
+                                        });
+
+                                        if ($("#view_text_58_277266946").parent(".w_tab_container_item ").length > 0) {
+                                            $("#view_text_58_277266946").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                        }
+                                        if ($("#view_text_58_277266946").parents(".w_tab_container").length > 0) {
+                                            $("#view_text_58_277266946").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                        }
+                                        if ($("#view_text_58_277266946").parents(".w_tab").length > 0) {
+                                            $("#view_text_58_277266946").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                        }
+
+
+                                        yiburecomputeLayoutHeight();
+                                        initScrollHeight_view_text_58_277266946();
+
+                                    }
+                                    function initScrollHeight_view_text_58_277266946() {
+                                        var currentHeight = $("#view_text_58_277266946").height();
+                                        var oldHeight = window["view_text_58_277266946" + "_height"];
+                                        window["view_text_58_277266946" + "_height"] = currentHeight;
+                                        if (oldHeight != undefined) {
+                                            var subtract = currentHeight - oldHeight;
+                                            if (subtract < 0) {
+
+                                                if ($("#view_text_58_277266946").parents(".mainSamrtView").length > 0) {
+                                                    $("#view_text_58_277266946").parents(".mainSamrtView").each(function () {
+                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
+                                                            var height = $(this).height();
+                                                            var oheight = $(this).attr("oheight");
+
+                                                            var expandh = $(this).attr("expandh");
+                                                            if (oheight != undefined && expandh != undefined) {
+                                                                oheight = parseInt(oheight);
+                                                                expandh = parseInt(expandh);
+                                                                expandh = expandh + subtract;
+                                                                var newHeight = oheight + expandh;
+                                                                $(this).height(newHeight);
+                                                                $(this).attr("expandh", expandh);
+                                                                if ($(this).children(".yibuFrameContent").length > 0) {
+                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
+                                                                        $(this).children(".yibuFrameContent").height(newHeight);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                    });
+                                                }
+                                            }
+                                        }
+                                        var $txtControl = $('#view_text_58_277266946');
+                                        $txtControl.find('img').css({'max-width': $txtControl.width() + 'px'});
+                                    }
+                                    $(function () {
+                                        window["view_text_58_277266946" + "_height"] = $("#view_text_58_277266946").height();
+                                        var $txtControl = $('#view_text_58_277266946');
+                                        $txtControl.find('img').css({'max-width': $txtControl.width() + 'px'});
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div id="view_navigator_59_277266946" class="yibuSmartViewMargin absPos">
+                            <div class='yibuFrameContent navigator_Style5_Item0 view_navigator_59_277266946_Style5_Item0'>
+                                <!--nav-->
+                                <ul id=nav_view_navigator_59_277266946 styleItem=Style5>
+                                    <li class=w_vnav_item>
+                                        <h3>
+                                            {volist name="child" id="v"}
+                                            <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}" style="width: 143px" target=_self>
+                                                {$v.catname}
+                                            </a>
+                                            {/volist}
+                                        </h3>
+                                    </li>
+
+                                </ul>
+
+                                <!--/nav-->
+
+
+                                <input type="hidden"
+                                       id="HeightVariablesStr_view_navigator_59_277266946"
+                                       value="$Item_height:28.67px;$SubItem_height:28.67px;"/>
+
+                            </div>
+                        </div>
+                        <div id="view_image_60_277266946" class="yibuSmartViewMargin absPos">
+                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
+                                 style='height:223px;width:182px;'>
+                                <div class="megwh" style="height:100%; width:100%;">
+                                    <a id="autosize_view_image_60_277266946"
+                                       href="javascript:void(0)" target="_self">
+                                        <input id="w_view_image_60_277266946" type="hidden"
+                                               value="178"/>
+                                        <input id="h_view_image_60_277266946" type="hidden"
+                                               value="214"/>
+                                        <input id="canadjustwidth_view_image_60_277266946"
+                                               type="hidden" value="False"/>
+                                        <input id="canadjustheight_view_image_60_277266946"
+                                               type="hidden" value="False"/>
+                                        <img src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285250_tu5_11dc7616-2e91-4299-9673-694339a21195_resize_picture.png"
+                                             tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6285250_tu5_11dc7616-2e91-4299-9673-694339a21195_resize_picture.png"
+                                             alt="" style="border:none; position:relative;"/>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <script type="text/javascript">
+                        function setLayoutHeight() {
+                            var bannerheight = $("#view_banner_57_277266946").css("height");
+                            $("#view_banner_57_277266946").children(".yibuFrameContent").css("height", bannerheight);
+                        }
+                        ;
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

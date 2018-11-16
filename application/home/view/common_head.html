@@ -1,131 +1,297 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="zh-cn"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="zh-cn"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-cn"> <!--<![endif]-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    
+
     <title>{$info['title']??($title ? $title : $sys.title)}</title>
-    <meta name="keywords" content="{$info['keywords']??($keywords ? $keywords : $sys.key)}" />
-    <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}" />
-    <!-- ////////////////////////////////// -->
-    <!-- //      Stylesheets Files       // -->
-    <!-- ////////////////////////////////// -->
-    <link rel="stylesheet" href="/static/home/css/base.css" id="camera-css" />
-    <link rel="stylesheet" href="/static/home/css/framework.css" />
-    <link rel="stylesheet" href="/static/home/css/style.css" />
-    <link rel="stylesheet" href="/static/home/css/noscript.css" media="screen,all" id="noscript" />
+    <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
+    <meta name="keywords" content=" {$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
 
-    <!-- ////////////////////////////////// -->
-    <!-- //        Favicon Files         // -->
-    <!-- ////////////////////////////////// -->
-    <link rel="shortcut icon" href="/static/home/images/favicon.ico" />
+    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css"
+          tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" type="text/css"/>
 
-    <!-- ////////////////////////////////// -->
-    <!-- //      Javascript Files        // -->
-    <!-- ////////////////////////////////// -->
-    <script>
-        var HOME = '/static/home';
+
+
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/public.common.min.js"
+            tppabs="http://img.bj.wezhan.cn/Scripts/public.common.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.color.js"
+            tppabs="http://img.bj.wezhan.cn/Scripts/jquery.color.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"></script>
+    <script language='javascript' type='text/javascript' id='yibuHeaderScript'>
     </script>
-    <script src="/static/home/js/jquery.min.js"></script>
-    <script src="/static/home/js/jquery.easing-1.3.min.js"></script>
-    <script src="/static/home/js/tooltip.js"></script>
-    <script src="/static/home/js/dropdown.js"></script>
-    <script src="/static/home/js/tinynav.min.js"></script>
-    <script src="/static/home/js/camera.min.js"></script>
-    <script src="/static/home/js/jquery.fancybox.js?v=2.0.6"></script>
-    <script src="/static/home/js/jquery.fancybox-media.js?v=1.0.3"></script>
-    <script src="/static/home/js/jquery.ui.totop.min.js"></script>
-    <script src="/static/home/js/ddaccordion.js"></script>
-    <script src="/static/home/js/jquery.twitter.js"></script>
-    <script src="/static/home/js/jflickrfeed.min.js"></script>
-    <script src="/static/home/js/faq-functions.js"></script>
-    <script src="/static/home/js/isotope.js"></script>
-    <script src="/static/home/js/theme-functions.js"></script>
-    <script>
-        //设为首页 www.jb51.net
-        function SetHome(obj,url){
-            try{
-                obj.style.behavior='url(#default#homepage)';
-                obj.setHomePage(url);
-            }catch(e){
-                if(window.netscape){
-                    try{
-                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-                    }catch(e){
-                        alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
-                    }
-                }else{
-                    alert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【"+url+"】设置为首页。");
-                }
-            }
-        }
+    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"></script>
+    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"
+            tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"
+            tppabs="http://img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"></script>
 
-        //收藏本站 www.jb51.net
-        function AddFavorite(title, url) {
-            try {
-                window.external.addFavorite(url, title);
-            }
-            catch (e) {
-                try {
-                    window.sidebar.addPanel(title, url, "");
-                }
-                catch (e) {
-                    alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请进入新网站后使用Ctrl+D进行添加");
-                }
-            }
-        }
-    </script>
-    <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 </head>
 <body>
-<div class="user">
-    <div id="top-social">
-        <div class="social-panel">
-            <ul>
-                <li><a href="javascript:void(0);" onclick="SetHome(this,'{:config('url_domain_root')}');">设为首页</a></li>
-                <li><a href="javascript:void(0);" onclick="AddFavorite('{:config('sys_name')}','{:config('url_domain_root')}')">加入收藏</a></li>
-                <li><a href="{:url('user/index/index')}" target="_blank">{if condition="session('user.username')"}{:session('user.username')}{else/}会员中心{/if}</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clear"></div>
-</div>
-<!-- header start here -->
-<header>
-    <div id="main-wrapper">
-        <!-- logo start here -->
-        <div id="logo">
-            <a href="{:url('home/index/index')}" title="CLTPHP内容管理系统"><img src="{$sys.logo}" alt="CLTPHP" style="width: 160px;max-height: 60px;" /></a>
-        </div>
-        <!-- logo end here -->
-        <!-- mainmenu start here -->
-        <nav id="mainmenu">
-            <ul id="menu">
-                <li {if condition="$controller eq 'index'"}class="selected"{/if}><a href="{:url('home/index/index')}" title="CLTPHP内容管理系统">首页</a></li>
-                {volist name="category" id="vo"}
-                <li {if condition="$controller eq $vo['catdir']"}class="selected"{/if}>
-                {if condition="$vo['child'] eq 1"}
-                <a href="#">{$vo.catname}</a>
-                <ul>
-                    {volist name="$vo.sub" id="v"}
-                    <li><a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}" title="{$v.catname}-CLTPHP内容管理系统"><span>-</span> {$v.catname}</a></li>
-                    {/volist}
-                </ul>
-                {else /}
-                <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}" title="{$vo.catname}-CLTPHP内容管理系统">{$vo.catname}</a>
-                {/if}
-                </li>
-                {/volist}
-            </ul>
-        </nav>
-        <!-- mainmenu end here -->
+<div id="view_layout_1_843" class="mainSamrtView yibuSmartViewMargin">
+    <div class='yibuFrameContent layout_Block2_Item0' style='border-style:none;'>
+        <style type="text/css">
 
-    </div>
-</header>
-<!-- header end here -->
+            .header, .main-wrap .main, .footer {
+                position: relative;
+                clear: both;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .main-wrap {
+                clear: both;
+                margin: 0;
+                padding: 0;
+                width: auto;
+            }
+
+            .main-wrap .main {
+            }
+
+            .main-wrap .main .content {
+                width: 100%;
+            }
+
+            body {
+                background-color:;
+
+            }
+        </style>
+
+
+        <div style="*z-index:11;*position:relative;width:100%;height:548px;margin-left:auto;margin-right:auto;background-color:">
+            <div class="header page_header" style="width:1000px;height:548px;;">
+                <div class='runTimeflowsmartView'>
+                    <div id="view_banner_32_843" class="yibuSmartViewMargin absPos">
+                        <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_32_843_Style1_Item0'
+                             style='height:544px;width:1003px;'>
+                            <div class="w_container_wrap renderfullScreen"></div>
+                            <script>
+                                $(function () {
+                                    setRenderFullScreen($('#view_banner_32_843'));
+                                })
+                            </script>
+
+
+                            <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0"
+                                 id="flowsmartView_32" style=width:1003px;>
+                                <div id="view_image_3_843" class="yibuSmartViewMargin absPos">
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
+                                         style='height:106px;width:252px;border-style:none;'>
+                                        <div class="megwh" style="height:100%; width:100%;">
+                                            <a id="autosize_view_image_3_843" href="wzsy.htm"
+                                               tppabs="http://www.h-bahn.cn/wzsy" target="_self">
+                                                <input id="w_view_image_3_843" type="hidden" value="180"/>
+                                                <input id="h_view_image_3_843" type="hidden" value="90"/>
+                                                <input id="canadjustwidth_view_image_3_843" type="hidden"
+                                                       value="False"/>
+                                                <input id="canadjustheight_view_image_3_843" type="hidden"
+                                                       value="False"/>
+
+                                                <img class="lazyload" src="/static/air/img.bj.wezhan.cn/transparent.gif"
+                                                     tppabs="http://img.bj.wezhan.cn/transparent.gif"
+                                                     data-original="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png"
+                                                     alt="" style="border:none; position:relative;"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="view_navigator_8_843" class="yibuSmartViewMargin absPos">
+                                    <div class='yibuFrameContent navigator_Style3_Item0 view_navigator_8_843_Style3_Item0'
+                                         style='border-style:none;'><!--nav-->
+                                        <ul id=nav_view_navigator_8_843 styleItem=Style3>
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="/" >
+                                                        网站首页
+                                                    </a>
+                                                </h3>
+                                            </li>
+                                            {volist name="category" id="vo"}
+                                            <li class=w_nav_item style=width:16.66%;*width:16.33%>
+                                                <h3>
+                                                    <a href="#" >
+                                                        {$vo.catname}
+                                                    </a>
+                                                </h3>
+                                                <ul class=w_subnav style=width:83.17px;*left:0px;>
+                                                    {volist name="$vo.sub" id="v"}
+                                                    <li class=w_subnav_item>
+                                                        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}">
+                                                            {$v.catname}
+                                                        </a>
+                                                    </li>
+                                                    {/volist}
+
+                                                </ul>
+                                            </li>
+                                            {/volist}
+                                        </ul>
+
+                                        <!--/nav-->
+                                        <input type="hidden" id="HeightVariablesStr_view_navigator_8_843"
+                                               value="$height:31px;$Item_height:31px;$SubItem_height:31px;"/>
+                                        <script>
+                                            $(function () {
+                                                slideMenu("nav_" + 'view_navigator_8_843');
+                                                jQuery("#nav_" + 'view_navigator_8_843').parent("div").css("overflow", "visible");
+                                                var isDivider = true;
+
+                                                //子导航下边框显示不出来的fix
+                                                $("#nav_" + 'view_navigator_8_843').children("li").each(function () {
+                                                    var Li_height = $(this).height();
+                                                    $("li", this).height(Li_height);
+
+                                                    var child_li = $("li", this);
+                                                    var topborderwidth = $("a:first", child_li).css('border-top-width');
+                                                    topborderwidth = isNaN(parseInt(topborderwidth)) ? 0 : parseInt(topborderwidth);
+                                                    var bottomborderwidth = $("a:first", child_li).css('border-bottom-width');
+                                                    bottomborderwidth = isNaN(parseInt(bottomborderwidth)) ? 0 : parseInt(bottomborderwidth);
+
+                                                    $("a", child_li).height(Li_height - topborderwidth - bottomborderwidth);
+                                                });
+
+                                                jQuery("#nav_" + 'view_navigator_8_843').children("li").each(function () {
+                                                    var topWidth = $(this).children("h3").children("a").css("border-top-width");
+                                                    var leftWidth = $(this).children("h3").children("a").css("border-left-width");
+                                                    var bottomWidth = $(this).children("h3").children("a").css("border-bottom-width");
+                                                    if (topWidth != "0" && topWidth != "0px") {
+                                                        isDivider = false;
+                                                        return false;
+                                                    }
+                                                    if (leftWidth != "0" && leftWidth != "0px") {
+                                                        isDivider = false;
+                                                        return false;
+                                                    }
+                                                    if (bottomWidth != "0" && bottomWidth != "0px") {
+                                                        isDivider = false;
+                                                        return false;
+                                                    }
+                                                    if ($(this).children("ul").length > 0) {
+                                                        var maxWidth = $(this).children("ul").width();
+                                                        $(this).children("ul").children("li").each(function () {
+                                                            var a = $(this).children("a");
+                                                            var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 20;
+
+                                                            if (maxWidth < currentWidth)
+                                                                maxWidth = currentWidth;
+                                                        });
+                                                        $(this).children("ul").css("width", maxWidth + "px");
+                                                    }
+
+                                                });
+                                                //if (isDivider)
+                                                //    jQuery("#nav_" + 'view_navigator_8_843').children("li:last").children("h3").children("a").css("border-right-width", "0px");//去掉最后一项的分隔线
+
+                                                if ("False" == "False") {
+                                                    jQuery("#" + 'view_navigator_8_843').css("z-index", "999999");
+                                                    if ($.browser.msie) {
+                                                        jQuery("#" + 'view_navigator_8_843').parent(".runTimeflowsmartView").css("z-index", "999999");
+                                                    }
+                                                    if (jQuery("#" + 'view_navigator_8_843').parent().attr("class") != "runTimeflowsmartView") {
+                                                        jQuery("#" + 'view_navigator_8_843').parent(".w_container_content").parent().parent().css("z-index", "999998");
+                                                    }
+                                                }
+                                                SetNavSelectedStyle("nav_" + 'view_navigator_8_843', 'nav');//选中当前导航
+                                            })
+
+                                        </script>
+
+
+                                    </div>
+                                </div>
+                                <div id="view_search_36_843" class="yibuSmartViewMargin absPos">
+                                    <div class='yibuFrameContent overflow_hidden search_Style2_Item0 view_search_36_843_Style2_Item0'
+                                         style='height:25px;width:185px;'><!--w_search-->
+                                        <!--fontfamily_select-->
+                                        <div style="position: absolute; top: 0px; filter: alpha(opacity=0);opacity:0;background-color: #777; z-index: 2; left: 0px; display:none; width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="w_search">
+                                            <!--w_search_head-->
+                                            <div class="w_search_head f_clearfix">
+                                                <input type="text" class="w_search_input" placeholder="请输入关键字"/>
+                                                <button class="w_search_btn" type="button">
+                                                    <i class="iconfont"></i>
+                                                </button>
+                                            </div>
+                                            <!--/w_search_head-->
+                                        </div>
+                                        <!--/w_search-->
+
+                                        <!--/w_search-->
+                                        <script typeof="text/javascript">
+                                            $(function () {
+                                                var hoverIcon = "";
+                                                if (hoverIcon != "") {
+                                                    var obj = $("#view_search_36_843").find(".w_search_btn i");
+                                                    obj.unbind("hover");
+                                                    obj.hover(function () {
+                                                                $(this).html(hoverIcon);
+                                                            },
+                                                            function () {
+                                                                $(this).html("");
+                                                            });
+                                                }
+                                                $("#view_search_36_843 .w_search_btn").click(function () {
+                                                    var keyword = $("#view_search_36_843").find(".w_search_input").val();
+                                                    if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
+                                                        alert("搜索关键字不能为空")
+                                                        return;
+                                                    }
+                                                    var cate = 0;
+                                                    var catename = "全部";
+                                                    if ("False".toLocaleLowerCase() != "true")
+                                                        if ("False".toLocaleLowerCase() == "false") {
+                                                            window.location.href = "searchresultlist-keyword=.htm"/*tpa=http://www.h-bahn.cn/searchresultlist?keyword=*/ + keyword + "&searchCategory=" + cate + "|" + catename + "&htmlSmartId=0&isshowsearch=False";
+                                                        } else {
+                                                            TurnPageSmartView("843", "", "False", "1", "", "", cate + "|" + catename, keyword, "false");
+                                                        }
+                                                });
+                                                $("#view_search_36_843 .w_search_input").keydown(function (e) {
+                                                    if (e.keyCode == 13) {
+                                                        $("#view_search_36_843 .w_search_btn").click();
+                                                    }
+                                                });
+                                                var elementId = 'view_search_36_843';
+                                                var $searchWrap = $("#" + elementId + " .w_search").parent().parent();
+                                                var $searchButton = $("#" + elementId + " .w_search_btn")
+                                                var $searchInput = $("#" + elementId + " .w_search_input");
+                                                var inputBorderWidth = parseInt($searchInput.css('border-left-width')) + parseInt($searchInput.css('border-right-width'));
+                                                var inputButtonWidth = parseInt($searchButton.css('border-left-width')) + parseInt($searchButton.css('border-right-width'));
+                                                var searchInputWidth = $searchWrap.width() - $searchButton.width() - inputBorderWidth - inputButtonWidth - 5;
+                                                var searchInputHeight = $searchWrap.height();
+                                                if (searchInputWidth <= 70) {
+                                                    searchInputWidth = 70;
+                                                    $("#" + elementId).children().eq(0).width(90 + $searchButton.width());
+                                                }
+                                                $("#" + elementId + " .w_search").width("auto");
+                                                $searchInput.width(searchInputWidth);
+                                                $searchInput.height(searchInputHeight);
+                                                $searchButton.height(searchInputHeight + 2);
+                                                $("#view_search_36_843 .yibuFrameContent").removeClass("overflow_hidden");
+                                            });
+
+                                        </script>
+                                    </div>
+                                </div>

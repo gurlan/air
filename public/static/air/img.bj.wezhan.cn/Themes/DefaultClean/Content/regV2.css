@@ -1,0 +1,51 @@
+
+@charset "utf-8";
+
+/*  Reset */
+html { background:#f0f0f0!important; color:#333!important;-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p { margin:0; padding:0;}
+body,button,input,select,textarea { font:12px/1.5 "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;}
+input,select,textarea { font-size:100%;}
+fieldset,img { border:0;}
+iframe { display:block;}
+address,caption,cite,code,dfn,em,th,var { font-style:normal; font-weight:500;}
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:500;}
+a:link { color:#666; text-decoration:none;}
+a:hover { color:#333; text-decoration:underline;}
+
+.reg_wrap{ width:825px; min-height:600px; margin:100px auto; }
+.u_reg_box{ background:#fff; padding:0 25px;}
+.u_reg_icon{ padding-bottom:40px;}
+.u_reg_icon i.icon_user{ width: 44px; height: 44px; margin: 0 auto; display: block; background-position: 0 0;}
+
+.u_reg_title h3 { display: block; color:#333; font-size:30px; text-align:center;}
+.icon{ background-image:url("images/icons.png")/*tpa=http://img.bj.wezhan.cn/Themes/DefaultClean/Content/images/icons.png*/}
+.u_reg_main{ width:340px; padding:30px 0; margin:0 auto;}
+
+/*huangwei 2016-10-26*/
+.u_form_item{ padding-bottom: 15px;width: 330px;}
+/*huangwei 2016-10-26*/
+/*huangwei 2016-10-26*/
+.u_form_item .u_label{width: 100%;position:relative; height: 40px; line-height: 40px; display: inline-block; border:1px solid #e8e8e8; }
+/*huangwei 2016-10-26*/
+.u_label_text{ position:absolute; left:14px; top:0; color:#999; }
+/*huangwei 2016-10-26*/
+.u_form_item .u_label .u_input{ width: 310px; height:20px; line-height: 20px;padding:10px; border:0; outline:none;}
+/*huangwei 2016-10-26*/
+.u_form_err_tis{ margin-top:-8px;margin-bottom: 5px;line-height: 20px;font-size: 12px;color: #26ae90;display: none;}
+.u_form_err_tis i.icon_error{ width: 14px;height: 14px;margin: -1px 5px 0 0;overflow: hidden;display: inline-block;vertical-align: middle; background-position: center -67px;}
+.u_form_item .u_label.u_label_err{ border: 1px solid #26ae90!important;}
+
+.u_form_item .u_input.u_input_checkcode{ width:108px!important;}
+.u_form_item .u_codeimage{ width:125px; height:42px; line-height:42px; margin-left: 9px; vertical-align: middle; cursor: pointer;border:0 none; text-align:center; }
+/*huangwei 2016-10-26*/
+.u_form_item .u_button{ background:#26ae90;width: 330px; height: 42px; line-height: 42px;text-align: center; font-size: 14px;display: block;cursor: pointer; margin-top: 15px;color: #fff; border:none;}
+.u_form_item .u_button:hover{background-color: #1DA788;}
+/*huangwei 2016-10-26*/
+.u_form_item .u_others{ margin-top: 15px;color: #9d9d9d; text-align:center;}
+.u_form_item .u_form_check{ vertical-align:middle;}
+
+/*huangwei 2016-10-26*/
+.u_pre_identifying_code{display: block; position: absolute;  top: 0;  right: 0;  padding-left: 10px;  padding-right: 10px;  width: 93px;  height: 40px;  box-sizing: border-box;color: #26ae90;background-color: #fff;}
+.u_pre_identifying_code:hover{color: #1DA788;text-decoration: none;}
+.u_after_identifying_code{position: absolute;  top: 0;  right: 0;  padding-left: 10px;  padding-right: 10px;  height: 40px;  box-sizing: border-box;color: #aaa;background-color: #fff;}
