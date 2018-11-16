@@ -11,41 +11,25 @@
             <div class="w_slider_num">
                 <ul style="display:none;">
 
-
-                    <li style="font-size:12px;">1</li>
-                    <li style="font-size:12px;">2</li>
-                    <li style="font-size:12px;">3</li>
+                    {volist name="bannerList" id="vo" key="i"}
+                    <li style="font-size:12px;">{$i}</li>
+                    {/volist}
                 </ul>
             </div>
             <div class="w_slider_img">
                 <ul>
+                    {volist name="bannerList" id="vo" key="i"}
                     <li style="width:1000px; height:438px;">
-                        <a title="1" href="javascript:void(0);" target="_self">
+                        <a title="{$i}" href="javascript:void(0);" target="_self">
                             <img style="height:438px" class="lazyload"
                                  src="/static/ari/img.bj.wezhan.cn/transparent.gif"
-                                 tppabs="http://img.bj.wezhan.cn/transparent.gif"
-                                 data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/6281711_1.png"
-                                 onload="DynamicLoad(this)" title="1"/>
+
+                                 data-original="{$vo.pic}"
+                                 onload="DynamicLoad(this)" title="{$i}"/>
                         </a>
                     </li>
-                    <li style="width:1000px; height:438px;">
-                        <a title="2" href="javascript:void(0);" target="_self">
-                            <img style="height:438px" class="lazyload"
-                                 src="/static/ari/img.bj.wezhan.cn/transparent.gif"
-                                 tppabs="http://img.bj.wezhan.cn/transparent.gif"
-                                 data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/6281712_2.png"
-                                 onload="DynamicLoad(this)" title="2"/>
-                        </a>
-                    </li>
-                    <li style="width:1000px; height:438px;">
-                        <a title="3" href="javascript:void(0);" target="_self">
-                            <img style="height:438px" class="lazyload"
-                                 src="/static/ari/img.bj.wezhan.cn/transparent.gif"
-                                 tppabs="http://img.bj.wezhan.cn/transparent.gif"
-                                 data-original="http://img.bj.wezhan.cn/content/sitefiles/2006291/images/6281713_3.png"
-                                 onload="DynamicLoad(this)" title="3"/>
-                        </a>
-                    </li>
+                    {/volist}
+
                 </ul>
             </div>
 
