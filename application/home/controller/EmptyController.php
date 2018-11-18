@@ -91,6 +91,18 @@ class EmptyController extends Common{
     public function info(){
         Db::name(DBNAME)->where('id',input('id'))->setInc('hits');
         $info = Db::name(DBNAME)->where('id',input('id'))->find();
+        $arrchildid = db('category')->where(['id'=>input('catId')])->value('arrchildid');
+        $map = ' ';
+        if($arrchildid!=input('catId')){
+            $map .= 'catid in ($arrchildid)';
+        }else{
+            $map .= 'catid = '.input("catId");
+        }
+        $map .= ' and (status = 1 or (status = 0 and createtime <'.time().'))';
+        $pre = $this->dao->where($map)->where('sort','<',$info['sort'])->order('sort asc,createtime desc')->find();
+        $next = $this->dao->where($map)->where('sort','>',$info['sort'])->order('sort asc,createtime desc')->find();
+        $this->assign('pre',$pre);
+        $this->assign('next',$next);
         $info['pic'] =  isset($info['pic'])?$info['pic']:"/static/home/images/sample-images/blog-post".rand(1,3).".jpg";
         $title_thumb = $info['thumb'];
         $info['title_thumb'] = $title_thumb?$title_thumb:'/static/home/images/sample-images/blog-post'.rand(1,3).'.jpg';

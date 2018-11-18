@@ -29,11 +29,13 @@ class Common extends Controller{
             $child = Db::name('category')->where('parentid',$parentid)->order('sort')->select();
             $this->assign('child',$child);
         }
+        $this->assign('catname',$thisCat['catname']);
         $this->assign('title',$thisCat['title']);
         $this->assign('keywords',$thisCat['keywords']);
         $this->assign('description',$thisCat['description']);
         define('DBNAME',strtolower($thisCat['module']));
         $this->pagesize = $thisCat['pagesize']>0 ? $thisCat['pagesize'] : '';
+        $this->assign('image',$thisCat['image']);
         // 获取缓存数据
         $cate = cache('cate');
 
@@ -44,6 +46,7 @@ class Common extends Controller{
             $cate = $tree->index_top($column_one,$column_two);
             cache('cate', $cate, 3600);
         }
+       // dump($cate);
         $this->assign('category',$cate);
 
         //广告

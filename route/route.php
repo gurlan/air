@@ -28,4 +28,5 @@ return [
     'contact-:catId'=>'home/contact/index',
     'senmsg'=>'home/index/senmsg',
     'down-:id'=>'home/download/down',
+    'video-:catId'=>'home/video/index',
 ];

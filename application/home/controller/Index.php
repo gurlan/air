@@ -62,8 +62,11 @@ class Index extends Common{
         return $this->fetch();
     }
     public function senmsg(){
-        $data = input('post.');
-
+        $data['tel'] = input('tel');
+        $data['name'] = input('name');
+        $data['company'] = input('company');
+        $data['email'] = input('email');
+        $data['content'] = input('content');
         $data['addtime'] = time();
         $data['ip'] = getIp();
         db('message')->insert($data);
@@ -74,5 +77,33 @@ class Index extends Common{
         $map['id'] = $id;
         $files = Db::name('download')->where($map)->find();
         return download(Env::get('root_path').'public'.$files['files'], $files['title']);
+    }
+    public function search()
+    {
+        $map = ' ';
+        $keyword = input('keyword');
+        $map .= 'title like "%'.$keyword.'%"';
+        $map .= ' and (status = 1 or (status = 0 and createtime <' . time() . '))';
+        $list = db('article')->alias('a')
+            ->where($map)
+            ->order('sort asc,createtime desc')
+            ->paginate($this->pagesize);
+        // 获取分页显示
+        $page = $list->render();
+        $list = $list->toArray();
+        foreach ($list['data'] as $k => $v) {
+            $list['data'][$k]['controller'] = $v['catdir'];
+            if (isset($v['thumb'])) {
+                $list['data'][$k]['title_thumb'] = imgUrl($v['thumb'], '/static/home/images/portfolio-thumb/p' . ($k + 1) . '.jpg');
+            } else {
+                $list['data'][$k]['title_thumb'] = '/static/home/images/portfolio-thumb/p' . ($k + 1) . '.jpg';
+            }
+        }
+        $this->assign('list', $list['data']);
+        $this->assign('page', $page);
+
+        $cattemplate = db('category')->where('id', input('catId'))->value('template_list');
+
+        return $this->fetch('search');
     }
 }

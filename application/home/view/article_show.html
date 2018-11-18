@@ -1,0 +1,411 @@
+<?php $num = 277268704;  ?>
+{include file="common/head"/}
+<link rel="stylesheet" href="/static/air/content/sitefiles2006/2006291/css/pc/9_zh-CN.css" type="text/css"/>
+
+            <div class="main-wrap clearfix"
+                 style="*z-index:10;*position:relative;width:100%;margin-left:auto;margin-right:auto;;background-color:">
+                <div class="main clearfix page_main" style="width:1000px;margin-left:auto;margin-right:auto;">
+                    <div class="sidebar-left page_sidebar" id="yibuLayout_sidebar"
+                         style="width:220px;height:404px;background-color:#ffffff;;">
+                        <div class='runTimeflowsmartView'>
+                            <div id="view_banner_57_{$num}" class="yibuSmartViewMargin absPos">
+                                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_57_{$num}_Style1_Item0'
+                                     style='height:401px;width:219px;'>
+                                    <script>
+                                        $(function () {
+                                            $("#view_banner_57_{$num}").children("div").css("overflow", "visible");
+                                        })
+                                    </script>
+
+
+                                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0"
+                                         id="flowsmartView_57">
+                                        <div id="view_text_58_{$num}" class="yibuSmartViewMargin absPos">
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                 style='height:22px;width:91px;'>
+                                                <style type="text/css">
+                                                    #view_text_58_{$num}_txt ul {
+                                                        list-style-position: inside;
+                                                    }
+                                                </style>
+                                                <div id='view_text_58_{$num}_txt'
+                                                     style="cursor:default; height:100%; width:100%;">
+                                                    <div class="editableContent">
+                                                        <p><span
+                                                                style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">{$catname}</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_58_{$num}_txt', "首页", "尾页", "上一页", "下一页");
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div id="view_navigator_59_{$num}" class="yibuSmartViewMargin absPos">
+                                            <div class='yibuFrameContent overflow_hidden navigator_Style5_Item0 view_navigator_59_{$num}_Style5_Item0'
+                                                 style='height:53px;width:163px;'><!--nav-->
+                                                <ul id=nav_view_navigator_59_{$num} styleItem=Style5>
+                                                    {volist name="child" id="vo"}
+                                                    <li class="w_vnav_item {if condition=" input(
+                                                    'catId')==$vo['id']"}w_vnav_item_current{/if}">
+                                                    <h3>
+                                                        <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}"
+                                                           style="width: 143px" target=_self>
+                                                            {$vo.catname}
+                                                        </a>
+                                                    </h3>
+                                                    </li>
+                                                    {/volist}
+                                                </ul>
+
+                                                <!--/nav-->
+
+
+                                                <input type="hidden" id="HeightVariablesStr_view_navigator_59_{$num}"
+                                                       value="$Item_height:26.5px;$SubItem_height:26.5px;"/>
+                                                <script>
+                                                    $(function () {
+                                                        jQuery("#nav_" + 'view_navigator_59_{$num}').parent("div").css("overflow", "visible");
+                                                        var isDivider = true;
+                                                        jQuery("#nav_" + 'view_navigator_59_{$num}').children("li").each(function () {
+                                                            var topWidth = $(this).children("h3").children("a").css("border-top-width");
+                                                            var leftWidth = $(this).children("h3").children("a").css("border-left-width");
+                                                            var rightWidth = $(this).children("h3").children("a").css("border-right-width");
+                                                            if (topWidth != "0" && topWidth != "0px") {
+                                                                isDivider = false;
+                                                                return false;
+                                                            }
+                                                            if (leftWidth != "0" && leftWidth != "0px") {
+                                                                isDivider = false;
+                                                                return false;
+                                                            }
+                                                            if (rightWidth != "0" && rightWidth != "0px") {
+                                                                isDivider = false;
+                                                                return false;
+                                                            }
+                                                            if ($(this).children("ul").length > 0) {
+                                                                var maxWidth = $(this).children("ul").width();
+                                                                $(this).children("ul").children("li").each(function () {
+                                                                    var a = $(this).children("a");
+                                                                    var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 46;
+
+                                                                    if (maxWidth < currentWidth)
+                                                                        maxWidth = currentWidth;
+                                                                });
+                                                                $(this).children("ul").css({
+                                                                    "width": maxWidth + "px",
+                                                                    "right": "-" + maxWidth + "px"
+                                                                });
+                                                            }
+                                                        });
+                                                        //if (isDivider)
+                                                        //    jQuery("#nav_" + 'view_navigator_59_{$num}').children("li:last").children("h3").children("a").css("border-bottom-width", "0px");//去掉最后一项的分隔线
+                                                        if ("False" == "False") {
+                                                            jQuery("#" + 'view_navigator_59_{$num}').css("z-index", "999999");
+                                                            if (jQuery("#" + 'view_navigator_59_{$num}').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
+                                                                jQuery("#" + 'view_navigator_59_{$num}').parent(".w_container_content").parent().parent().css("z-index", "999998");
+                                                            }
+                                                        }
+                                                        SetNavSelectedStyle("nav_" + 'view_navigator_59_{$num}', 'vnav');//选中当前导航
+                                                    })
+
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div id="view_image_60_{$num}" class="yibuSmartViewMargin absPos">
+                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
+                                                 style='height:223px;width:182px;'>
+                                                <div class="megwh" style="height:100%; width:100%;">
+                                                    <a id="autosize_view_image_60_{$num}" href="javascript:void(0);"
+                                                       target="_self">
+                                                        <input id="w_view_image_60_{$num}" type="hidden"
+                                                               value="178"/>
+                                                        <input id="h_view_image_60_{$num}" type="hidden"
+                                                               value="219"/>
+                                                        <input id="canadjustwidth_view_image_60_{$num}" type="hidden"
+                                                               value="False"/>
+                                                        <input id="canadjustheight_view_image_60_{$num}"
+                                                               type="hidden" value="False"/>
+
+                                                        <img class="lazyload" src="/static/air/img.bj.wezhan.cn/transparent.gif"
+                                                             
+                                                             data-original="/static/ait/content/image/logo.png"
+                                                             alt="" style="border:none; position:relative;"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript">
+                                        function setLayoutHeight() {
+                                            var bannerheight = $("#view_banner_57_{$num}").css("height");
+                                            $("#view_banner_57_{$num}").children(".yibuFrameContent").css("height", bannerheight);
+                                        };
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content yibuTemplateBody page_container" id="yibuLayout_container"
+                         style="width:780px;background-color:#ffffff;;">
+                        <div id="view_main_1_9" class="mainSamrtView yibuSmartViewMargin">
+                            <div class='yibuFrameContent main__Item0' style='height:455px;width:100%;'>
+                                <div class='runTimeflowsmartView'>
+                                    <div id="view_text_21_9" class="yibuSmartViewMargin absPos">
+                                        <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                             style='height:26px;width:217px;'>
+                                            <style type="text/css">
+                                                #view_text_21_9_txt ul {
+                                                    list-style-position: inside;
+                                                }
+                                            </style>
+                                            <div id='view_text_21_9_txt'
+                                                 style="cursor:default; height:100%; width:100%;">
+                                                <div class="editableContent">
+                                                    <p><span style="font-family: 宋体, SimSun;">{:toDate($info['createtime'],'Y/m/d')}</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                Pagination('view_text_21_9_txt', "首页", "尾页", "上一页", "下一页");
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div id="view_banner_53_9" class="yibuSmartViewMargin absPos">
+                                        <div class='yibuFrameContent banner_Style1_Item0 view_banner_53_9_Style1_Item0'>
+                                            <script>
+                                                $(function () {
+                                                    $("#view_banner_53_9").children("div").css("overflow", "visible");
+                                                })
+                                            </script>
+
+
+                                            <div class="flowsmartView isflowcontainer w_container_content"
+                                                 refarea="Area_0" id="flowsmartView_53">
+                                                <div id="view_text_54_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:28px;width:702px;'>
+                                                        <style type="text/css">
+                                                            #view_text_54_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_54_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p style="text-align: center;">
+                                                                    <span style="font-family: 宋体, SimSun;">
+                                                                        {$info.title}
+                                                                     </span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_54_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_55_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:24px;width:100px;'>
+                                                        <style type="text/css">
+                                                            #view_text_55_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_55_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p><span
+                                                                        style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">{$catname}</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_55_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_line_56_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden line_Style1_Item0 view_line_56_9_Style1_Item0'
+                                                         style='height:15px;width:756px;'>
+                                                        <div class="w_line"></div>
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_57_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:22px;width:73px;'>
+                                                        <style type="text/css">
+                                                            #view_text_57_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_57_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p><span
+                                                                        style="color: rgb(51, 51, 51); font-family: 宋体; font-weight: bold; line-height: 24px; text-align: right; widows: auto; ">来源：</span>
+                                                                    <span style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; text-align: right; widows: auto; ">
+                                                                        <a href="{$info.fromlink}">{$info.copyfrom}</a></span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_57_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_58_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:20px;width:60px;'>
+                                                        <style type="text/css">
+                                                            #view_text_58_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_58_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p>
+                                                                    <span style="color: rgb(51, 51, 51); font-family: 宋体; font-weight: bold; line-height: 24px; text-align: right; widows: auto; ">作者：</span>
+                                                                    <span style="color: rgb(51, 51, 51); font-family: 宋体; line-height: 24px; text-align: right; widows: auto; ">{$info.author}</span>
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_58_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_52_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:19px;width:97px;'>
+                                                        <style type="text/css">
+                                                            #view_text_52_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_52_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p style="text-align: right;">
+                                                                    <strong>
+                                                                        <span style="font-family: 宋体, SimSun;">
+                                                                            发布时间:
+                                                                        </span>
+                                                                    </strong>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_52_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_60_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent text_Style1_Item0'>
+                                                        <style type="text/css">
+                                                            #view_text_60_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_60_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                {$info.content|raw}
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_60_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_61_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:28px;width:75px;'>
+                                                        <style type="text/css">
+                                                            #view_text_61_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_61_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p><span style="font-family: 宋体, SimSun;">上一篇文章：</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_61_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_linkbutton_38_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden linkbutton_Style5_Item0 view_linkbutton_38_9_Style5_Item0' style='height:22px;width:287px;'>
+                                                        {notempty name="pre"}
+                                                        <a target="_self" href="{:url('home/'.$pre['catdir'].'/info',array('id'=>$pre['id'],'catId'=>$pre['catid']))}" class="w_button_wrap" style="width: 285px ; height: 20px ; line-height: 20px ;">
+                                                            <span class="w_button_position">
+                                                                <span class="w_button_text">{$pre.title}</span>
+                                                            </span>
+                                                         </a>
+                                                        {/notempty}
+
+                                                    </div>
+                                                </div>
+                                                <div id="view_text_40_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
+                                                         style='height:22px;width:78px;'>
+                                                        <style type="text/css">
+                                                            #view_text_40_9_txt ul {
+                                                                list-style-position: inside;
+                                                            }
+                                                        </style>
+                                                        <div id='view_text_40_9_txt'
+                                                             style="cursor:default; height:100%; width:100%;">
+                                                            <div class="editableContent">
+                                                                <p style="text-align: right;"><span
+                                                                        style="color: rgb(0, 0, 0);"><span
+                                                                        style="font-size: 12px; font-family: 宋体, SimSun;">下一篇文章：</span></span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <script>
+                                                            Pagination('view_text_40_9_txt', "首页", "尾页", "上一页", "下一页");
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <div id="view_linkbutton_62_9" class="yibuSmartViewMargin absPos">
+                                                    <div class='yibuFrameContent overflow_hidden linkbutton_Style1_Item0 view_linkbutton_62_9_Style1_Item0'
+                                                         style='height:27px;width:271px;'>
+                                                        {notempty name="next"}
+                                                        <a target="_self" href="{:url('home/'.$next['catdir'].'/info',array('id'=>$next['id'],'catId'=>$next['catid']))}" class="w_button_wrap" style="width: 285px ; height: 20px ; line-height: 20px ;">
+                                                            <span class="w_button_position">
+                                                                <span class="w_button_text">{$next.title}</span>
+                                                            </span>
+                                                        </a>
+                                                        {/notempty}
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <script type="text/javascript">
+                                                function setLayoutHeight() {
+                                                    var bannerheight = $("#view_banner_53_9").css("height");
+                                                    $("#view_banner_53_9").children(".yibuFrameContent").css("height", bannerheight);
+                                                };
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            {include file="common/footer"/}

@@ -1,119 +1,106 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
 
 
     <title>{$info['title']??($title ? $title : $sys.title)}</title>
     <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
     <meta name="keywords" content=" {$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
 
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.color.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"></script>
-    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/public.common.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"></script>
-    <script language='javascript' type='text/javascript' id='yibuHeaderScript'></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"></script>
+    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" type="text/css" />
+    <link href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/mw-iconfont/iconfont.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/mw-iconfont/iconfont.css" rel="stylesheet" />
+    <link href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/pagerStyle/pager.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/pagerStyle/pager.css" rel="stylesheet" />
+    <link href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base/css/font-awesome.min.css" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Content/css/base/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css" type="text/css"/>
+
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/public.common.min.js" tppabs="http://img.bj.wezhan.cn/Scripts/public.common.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"></script>
+    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.color.js" tppabs="http://img.bj.wezhan.cn/Scripts/jquery.color.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js" tppabs="http://img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"></script>
+
+    <script language='javascript' type='text/javascript' id='yibuHeaderScript'>
+    </script>
+
+
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js" tppabs="http://img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js" tppabs="http://img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"></script>
+
+
 
 </head>
 <body>
-<div id="view_layout_1_843" class="mainSamrtView yibuSmartViewMargin">
-    <div class='yibuFrameContent layout_Block2_Item0' style='border-style:none;'>
+<input type="hidden" id="pageinfo" value="274227601" data-type="" data-device="pc" data-entityid="" />
+<div  id="view_layout_1_{$num}" class="mainSamrtView yibuSmartViewMargin"   >
+    <div class='yibuFrameContent layout_Block3_Item0' style='border-style:none;'>
         <style type="text/css">
+            /* Style */
+            .page-wrap { clear:both; margin:0 auto; padding:0; width:auto; height:100%; }
 
-            .header, .main-wrap .main, .footer {
-                position: relative;
-                clear: both;
-                margin: 0 auto;
-                padding: 0;
-            }
-
-            .main-wrap {
-                clear: both;
-                margin: 0;
-                padding: 0;
-                width: auto;
-            }
-
-            .main-wrap .main {
-            }
-
-            .main-wrap .main .content {
-                width: 100%;
-            }
-
-            body {
-                background-color:;
+            .page-wrap .header,.page-wrap .main-wrap .main,.page-wrap .footer { position:relative; clear:both; margin:0 auto; padding:0;}
+            .page-wrap .main-wrap { clear:both; margin:0; padding:0; width:auto; }
+            .page-wrap .main-wrap .main .sidebar-left,.page-wrap .main-wrap .main .content { float:left; display:inline;}
+            .page-wrap .main-wrap .main .content { float:right;}
+            .clearfix:before,.clearfix:after { content:""; display:table;}
+            .clearfix:after { clear:both; overflow:hidden;}
+            .clearfix { zoom:1;}
+            body{
+                background-color:#666666;
 
             }
         </style>
 
         <div class="page-wrap">
-
-        <div style="*z-index:11;*position:relative;width:100%;height:548px;margin-left:auto;margin-right:auto;background-color:">
-            <div class="header page_header" style="width:1000px;height:548px;;">
-                <div class='runTimeflowsmartView'>
-                    <div id="view_banner_32_843" class="yibuSmartViewMargin absPos">
-                        <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_32_843_Style1_Item0'
-                             style='height:544px;width:1003px;'>
-                            <div class="w_container_wrap renderfullScreen"></div>
+            <div style="*z-index:11;*position:relative;width:100%;height:308px;margin:0 auto;background-color:">
+                <div class="header page_header yibuLayout_tempPanel" style="width:1000px;height:308px;background-color:;;">
+                    <div class='runTimeflowsmartView'><div  id="view_banner_32_{$num}" class="yibuSmartViewMargin absPos"   >
+                        <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_32_{$num}_Style1_Item0' style='height:73px;width:1003px;'>    <div id="fullScreen_view_banner_32_{$num}" class="w_container_wrap renderfullScreen" ></div>
                             <script>
                                 $(function () {
-                                    setRenderFullScreen($('#view_banner_32_843'));
-                                })
+                                    setRenderFullScreen($('#view_banner_32_{$num}'));
+
+                                });
                             </script>
 
 
-                            <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0"
-                                 id="flowsmartView_32" style=width:1003px;>
-                                <div id="view_image_3_843" class="yibuSmartViewMargin absPos">
-                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
-                                         style='height:106px;width:252px;border-style:none;'>
-                                        <div class="megwh" style="height:100%; width:100%;">
-                                            <a id="autosize_view_image_3_843" href="wzsy.htm"
-                                               target="_self">
-                                                <input id="w_view_image_3_843" type="hidden" value="180"/>
-                                                <input id="h_view_image_3_843" type="hidden" value="90"/>
-                                                <input id="canadjustwidth_view_image_3_843" type="hidden"
-                                                       value="False"/>
-                                                <input id="canadjustheight_view_image_3_843" type="hidden"
-                                                       value="False"/>
+                            <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_32" style=width:1003px;>
+                                <div  id="view_image_3_{$num}" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:106px;width:252px;border-style:none;'>    <div class="megwh" style="height:100%; width:100%;">
+                                        <a id="autosize_view_image_3_{$num}" href="wzsy.htm" tppabs="http://www.h-bahn.cn/wzsy" target="_self" >
+                                            <input id="w_view_image_3_{$num}" type="hidden" value="180" />
+                                            <input id="h_view_image_3_{$num}" type="hidden" value="90" />
+                                            <input id="canadjustwidth_view_image_3_{$num}" type="hidden" value="False" />
+                                            <input id="canadjustheight_view_image_3_{$num}" type="hidden" value="False" />
+                                            <img  src="/static/air/content/image/logo.png"  alt="" style="border:none; position:relative;" />
 
-                                                <img class="lazyload" src="/static/air/img.bj.wezhan.cn/transparent.gif"
-
-                                                     data-original="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png"
-                                                     alt="" style="border:none; position:relative;"/>
-                                            </a>
-                                        </div>
+                                        </a>
+                                    </div>
                                     </div>
                                 </div>
-                                <div id="view_navigator_8_843" class="yibuSmartViewMargin absPos">
-                                    <div class='yibuFrameContent navigator_Style3_Item0 view_navigator_8_843_Style3_Item0'
-                                         style='border-style:none;'><!--nav-->
-                                        <ul id=nav_view_navigator_8_843 styleItem=Style3>
+                                <div  id="view_navigator_8_{$num}" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent navigator_Style3_Item0 view_navigator_8_{$num}_Style3_Item0' style='border-style:none;'><!--nav-->
+                                        <ul id=nav_view_navigator_8_{$num} styleItem=Style3>
                                             <li class=w_nav_item style=width:16.66%;*width:16.33%>
                                                 <h3>
-                                                    <a href="/">
+                                                    <a href="/" target=_self>
                                                         网站首页
                                                     </a>
                                                 </h3>
                                             </li>
-                                            {volist name="category" id="vo"}
+                                            {volist name="category" id="vo" offset="0" length="5"}
                                             <li class=w_nav_item style=width:16.66%;*width:16.33%>
                                                 <h3>
                                                     <a href="#">
@@ -135,148 +122,256 @@
                                         </ul>
 
                                         <!--/nav-->
-                                        <input type="hidden" id="HeightVariablesStr_view_navigator_8_843"
-                                               value="$height:31px;$Item_height:31px;$SubItem_height:31px;"/>
-                                        <script>
-                                            $(function () {
-                                                slideMenu("nav_" + 'view_navigator_8_843');
-                                                jQuery("#nav_" + 'view_navigator_8_843').parent("div").css("overflow", "visible");
-                                                var isDivider = true;
-
-                                                //子导航下边框显示不出来的fix
-                                                $("#nav_" + 'view_navigator_8_843').children("li").each(function () {
-                                                    var Li_height = $(this).height();
-                                                    $("li", this).height(Li_height);
-
-                                                    var child_li = $("li", this);
-                                                    var topborderwidth = $("a:first", child_li).css('border-top-width');
-                                                    topborderwidth = isNaN(parseInt(topborderwidth)) ? 0 : parseInt(topborderwidth);
-                                                    var bottomborderwidth = $("a:first", child_li).css('border-bottom-width');
-                                                    bottomborderwidth = isNaN(parseInt(bottomborderwidth)) ? 0 : parseInt(bottomborderwidth);
-
-                                                    $("a", child_li).height(Li_height - topborderwidth - bottomborderwidth);
-                                                });
-
-                                                jQuery("#nav_" + 'view_navigator_8_843').children("li").each(function () {
-                                                    var topWidth = $(this).children("h3").children("a").css("border-top-width");
-                                                    var leftWidth = $(this).children("h3").children("a").css("border-left-width");
-                                                    var bottomWidth = $(this).children("h3").children("a").css("border-bottom-width");
-                                                    if (topWidth != "0" && topWidth != "0px") {
-                                                        isDivider = false;
-                                                        return false;
-                                                    }
-                                                    if (leftWidth != "0" && leftWidth != "0px") {
-                                                        isDivider = false;
-                                                        return false;
-                                                    }
-                                                    if (bottomWidth != "0" && bottomWidth != "0px") {
-                                                        isDivider = false;
-                                                        return false;
-                                                    }
-                                                    if ($(this).children("ul").length > 0) {
-                                                        var maxWidth = $(this).children("ul").width();
-                                                        $(this).children("ul").children("li").each(function () {
-                                                            var a = $(this).children("a");
-                                                            var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 20;
-
-                                                            if (maxWidth < currentWidth)
-                                                                maxWidth = currentWidth;
-                                                        });
-                                                        $(this).children("ul").css("width", maxWidth + "px");
-                                                    }
-
-                                                });
-                                                //if (isDivider)
-                                                //    jQuery("#nav_" + 'view_navigator_8_843').children("li:last").children("h3").children("a").css("border-right-width", "0px");//去掉最后一项的分隔线
-
-                                                if ("False" == "False") {
-                                                    jQuery("#" + 'view_navigator_8_843').css("z-index", "999999");
-                                                    if ($.browser.msie) {
-                                                        jQuery("#" + 'view_navigator_8_843').parent(".runTimeflowsmartView").css("z-index", "999999");
-                                                    }
-                                                    if (jQuery("#" + 'view_navigator_8_843').parent().attr("class") != "runTimeflowsmartView") {
-                                                        jQuery("#" + 'view_navigator_8_843').parent(".w_container_content").parent().parent().css("z-index", "999998");
-                                                    }
-                                                }
-                                                SetNavSelectedStyle("nav_" + 'view_navigator_8_843', 'nav');//选中当前导航
-                                            })
-
-                                        </script>
+                                        <input type="hidden" id="HeightVariablesStr_view_navigator_8_{$num}" value="$height:31px;$Item_height:31px;$SubItem_height:31px;" />
 
 
                                     </div>
                                 </div>
-                                <div id="view_search_36_843" class="yibuSmartViewMargin absPos">
-                                    <div class='yibuFrameContent overflow_hidden search_Style2_Item0 view_search_36_843_Style2_Item0'
-                                         style='height:25px;width:185px;'><!--w_search-->
+                                <div  id="view_search_36_{$num}" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden search_Style2_Item0 view_search_36_{$num}_Style2_Item0' style='height:25px;width:185px;'><!--w_search-->
                                         <!--fontfamily_select-->
                                         <div style="position: absolute; top: 0px; filter: alpha(opacity=0);opacity:0;background-color: #777; z-index: 2; left: 0px; display:none; width: 100%; height: 100%;">
                                         </div>
-                                        <div class="w_search">
+                                        <div class="w-search" id="Style2">
                                             <!--w_search_head-->
-                                            <div class="w_search_head f_clearfix">
-                                                <input type="text" class="w_search_input" placeholder="请输入关键字"/>
-                                                <button class="w_search_btn" type="button">
+                                            <div class="w-search-container f_clearfix">
+                                                <div class="w-search-input-left">
+                                                    <input type="text" class="w-search-input" placeholder="请输入关键字" />
+                                                    <!--搜索检索-->
+                                                </div>
+                                                <button class="w-search-btn" type="button">
                                                     <i class="iconfont"></i>
                                                 </button>
+
                                             </div>
                                             <!--/w_search_head-->
                                         </div>
                                         <!--/w_search-->
-
                                         <!--/w_search-->
                                         <script typeof="text/javascript">
                                             $(function () {
                                                 var hoverIcon = "";
                                                 if (hoverIcon != "") {
-                                                    var obj = $("#view_search_36_843").find(".w_search_btn i");
+                                                    var obj = $("#view_search_36_{$num}").find(".w-search-btn i");
                                                     obj.unbind("hover");
                                                     obj.hover(function () {
-                                                                $(this).html(hoverIcon);
-                                                            },
-                                                            function () {
-                                                                $(this).html("");
-                                                            });
+                                                            $(this).html(hoverIcon);
+                                                        },
+                                                        function () {
+                                                            $(this).html("");
+                                                        });
                                                 }
-                                                $("#view_search_36_843 .w_search_btn").click(function () {
-                                                    var keyword = $("#view_search_36_843").find(".w_search_input").val();
+                                                var $deleteIcon = $("#view_search_36_{$num} #delete_icon");
+                                                var $searchText = $("#view_search_36_{$num} .w-search-input");
+                                                function InitDefaultValue() {
+                                                    if ($searchText.val() == '请输入关键字') {
+                                                        $searchText.val('');
+                                                        $deleteIcon.hide();
+                                                    }
+                                                    else {
+                                                        if ($searchText.val().length > 0)
+                                                            $deleteIcon.show();
+                                                    }
+                                                }
+                                                $searchText.keyup(function () {
+                                                    InitDefaultValue();
+                                                })
+                                                    .click(function () {
+                                                        InitDefaultValue();
+                                                    });
+                                                $("#searchlist li").hover(function(){$(this).parent().find("a").removeClass("current");$(this).find("a").addClass("current")});
+                                                $('#view_search_36_{$num} .w-search-input').bind('input propertychange', function () {
+                                                    $("#view_search_36_{$num}").css("z-Index", "1999999");
+                                                    var searchText = $(this).val();
+                                                    $("#view_search_36_{$num} #searchlist").show();
+                                                    $("#view_search_36_{$num} #ArticleResultTemplate a").text("在文章内搜索\"" + searchText + "\"");
+                                                    $("#view_search_36_{$num} #ProductResultTemplate a").text("在产品内搜索\"" + searchText + "\"");
+                                                });
+                                                //点击下拉的搜索项
+                                                $("#view_search_36_{$num} #searchlist li").click(function () {
+                                                    var keyword = $("#view_search_36_{$num}").find(".w-search-input").val();
+                                                    var searchCategory = $(this).attr("id");
                                                     if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
                                                         alert("搜索关键字不能为空")
                                                         return;
                                                     }
+                                                    if ("False".toLocaleLowerCase() != "true") {
+                                                        if ("False".toLocaleLowerCase() == "false") {
+                                                            window.location.href = "/home/index/search?keyword=" + keyword;
+                                                        } else {
+                                                            TurnNewPageSmartView("{$num}", "", "False", keyword, "false");
+                                                        }
+                                                    }
+                                                    $("#view_search_36_{$num} #searchlist").hide();
+                                                    $("#view_search_36_{$num}").css("z-Index", "199");
+                                                });
+
+                                                $("#view_search_36_{$num} .w-search-btn").click(function () {
+                                                    var keyword = $("#view_search_36_{$num}").find(".w-search-input").val();
+                                                    if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
+                                                        if ("2" == "1") {
+                                                            alert("Search keywords cannot be empty")
+                                                        } else {
+                                                            alert("搜索关键字不能为空")
+                                                        }
+                                                        return;
+                                                    }
+                                                    var searchCategory = "";
                                                     var cate = 0;
                                                     var catename = "全部";
+
+                                                    searchCategory = cate + "|" + catename;
+                                                    //新版本重新获取searchCategory
+                                                    if ("" == "product" || ("" == "all" && "on" != "on")) {
+                                                        searchCategory = "ProductResultTemplate";
+                                                    } else if ("" == "news" || ("" == "all" && "on" == "on")) {
+                                                        searchCategory = "ArticleResultTemplate";
+                                                    }
                                                     if ("False".toLocaleLowerCase() != "true")
+
                                                         if ("False".toLocaleLowerCase() == "false") {
-                                                            window.location.href = "searchresultlist-keyword=.htm"/*tpa=http://www.h-bahn.cn/searchresultlist?keyword=*/ + keyword + "&searchCategory=" + cate + "|" + catename + "&htmlSmartId=0&isshowsearch=False";
+                                                            window.location.href = "/home/index/search?keyword=" + keyword;
                                                         } else {
-                                                            TurnPageSmartView("843", "", "False", "1", "", "", cate + "|" + catename, keyword, "false");
+                                                            if ("False".toLocaleLowerCase() != "true") {
+                                                                //老版本当前页显示
+                                                                TurnPageSmartView("{$num}", "", "False", "1", "", "", cate + "|" + catename, keyword, "false");
+                                                            } else {
+                                                                //新版本（精简）
+                                                                TurnNewPageSmartView("{$num}", "", "False", keyword, "false");
+                                                            }
                                                         }
+                                                    $("#view_search_36_{$num} #searchlist").hide();
+                                                    $("#view_search_36_{$num}").css("z-Index", "199");
                                                 });
-                                                $("#view_search_36_843 .w_search_input").keydown(function (e) {
+                                                $("#view_search_36_{$num} .w-search-input").keydown(function (e) {
+                                                    $("#view_search_36_{$num}").css("z-Index", "1999999");
                                                     if (e.keyCode == 13) {
-                                                        $("#view_search_36_843 .w_search_btn").click();
+                                                        $("#view_search_36_{$num} .w-search-btn").click();
                                                     }
                                                 });
-                                                var elementId = 'view_search_36_843';
-                                                var $searchWrap = $("#" + elementId + " .w_search").parent().parent();
-                                                var $searchButton = $("#" + elementId + " .w_search_btn")
-                                                var $searchInput = $("#" + elementId + " .w_search_input");
+                                                var elementId = 'view_search_36_{$num}';
+                                                var $searchWrap = $("#" + elementId + " .w-search").parent().parent();
+                                                var $searchButton = $("#" + elementId + " .w-search-btn")
+                                                var $searchInput = $("#" + elementId + " .w-search-input");
                                                 var inputBorderWidth = parseInt($searchInput.css('border-left-width')) + parseInt($searchInput.css('border-right-width'));
                                                 var inputButtonWidth = parseInt($searchButton.css('border-left-width')) + parseInt($searchButton.css('border-right-width'));
-                                                var searchInputWidth = $searchWrap.width() - $searchButton.width() - inputBorderWidth - inputButtonWidth - 5;
-                                                var searchInputHeight = $searchWrap.height();
+                                                var searchInputWidth = $searchWrap.width() - $searchButton.width() - inputBorderWidth - inputButtonWidth - 15;
+                                                var searchInputHeight = $searchButton.height();
                                                 if (searchInputWidth <= 70) {
                                                     searchInputWidth = 70;
                                                     $("#" + elementId).children().eq(0).width(90 + $searchButton.width());
                                                 }
-                                                $("#" + elementId + " .w_search").width("auto");
+                                                $("#" + elementId + " .w-search").width("auto");
                                                 $searchInput.width(searchInputWidth);
-                                                $searchInput.height(searchInputHeight);
-                                                $searchButton.height(searchInputHeight + 2);
-                                                $("#view_search_36_843 .yibuFrameContent").removeClass("overflow_hidden");
+                                                $searchInput.height($("#" + elementId).height() - 6);
+                                                $searchInput.css("line-height",($("#" + elementId).height() - 6)+"px");
+                                                $searchButton.height($("#" + elementId).height() - 6);
+                                                $searchButton.css("line-height", ($("#" + elementId).height() - 6) + "px");
+                                                $("#view_search_36_{$num} .yibuFrameContent").removeClass("overflow_hidden");
+                                                $("#" + elementId).find("#searchlist").css("top", $searchInput.css("height"))
                                             });
 
-                                        </script>
+                                        </script></div>
+                                </div>
+                                <div  id="view_image_62_{$num}" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:18px;width:47px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                        <a id="autosize_view_image_62_{$num}" href="yibupage/277268706.htm" tppabs="http://www.h-bahn.cn/yibupage/277268706" target="_self" >
+                                            <input id="w_view_image_62_{$num}" type="hidden" value="480" />
+                                            <input id="h_view_image_62_{$num}" type="hidden" value="300" />
+                                            <input id="canadjustwidth_view_image_62_{$num}" type="hidden" value="False" />
+                                            <input id="canadjustheight_view_image_62_{$num}" type="hidden" value="False" />
+                                            <img  src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300398__c_u4prMCfjPPGOKMJMprydOBvERDuQBDk-232NpLa1ToaXNBhh1BJx8eDK7YVYCMuvJWjw0AFEvghwqLZi0s2COA--_321823d3-895d-402e-8b51-a3b4b8f48816_resize_picture.gif.png" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300398__c_u4prMCfjPPGOKMJMprydOBvERDuQBDk-232NpLa1ToaXNBhh1BJx8eDK7YVYCMuvJWjw0AFEvghwqLZi0s2COA--_321823d3-895d-402e-8b51-a3b4b8f48816_resize_picture.gif"  alt="" style="border:none; position:relative;" />
+
+                                        </a>
+                                    </div>
                                     </div>
                                 </div>
+                                <div  id="view_image_63_{$num}" class="yibuSmartViewMargin absPos"   >
+                                    <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:18px;width:49px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                        <a id="autosize_view_image_63_{$num}" href="javascript:void(0)" target="_self" >
+                                            <input id="w_view_image_63_{$num}" type="hidden" value="480" />
+                                            <input id="h_view_image_63_{$num}" type="hidden" value="300" />
+                                            <input id="canadjustwidth_view_image_63_{$num}" type="hidden" value="False" />
+                                            <input id="canadjustheight_view_image_63_{$num}" type="hidden" value="False" />
+                                            <img  src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300393__c_5hWfXVxNL-vmKwXDX86s7VymqDoUy1HxWoZY-ZrwyAbQMuQ8mJrQ205V2TW10usXNKPvlOu6VFJM-yYLkDmLUg--_372dbbca-2bc3-469e-84e0-0ff9fc970f54_resize_picture.gif.png" tppabs="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300393__c_5hWfXVxNL-vmKwXDX86s7VymqDoUy1HxWoZY-ZrwyAbQMuQ8mJrQ205V2TW10usXNKPvlOu6VFJM-yYLkDmLUg--_372dbbca-2bc3-469e-84e0-0ff9fc970f54_resize_picture.gif"  alt="" style="border:none; position:relative;" />
+
+                                        </a>
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <script type="text/javascript">
+                                function setLayoutHeight() {
+                                    var bannerheight = $("#view_banner_32_{$num}").css("height");
+                                    $("#view_banner_32_{$num}").children(".yibuFrameContent").css("height", bannerheight);
+                                };
+                            </script></div>
+                    </div>
+                        <div  id="view_banner_56_{$num}" class="yibuSmartViewMargin absPos"   >
+                            <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_56_{$num}_Style1_Item0' style='height:232px;width:1006px;'>    <div id="fullScreen_view_banner_56_{$num}" class="w_container_wrap renderfullScreen" ></div>
+                                <script>
+                                    $(function () {
+                                        setRenderFullScreen($('#view_banner_56_{$num}'));
+
+                                    });
+                                </script>
+
+
+                                <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_56" style=width:1006px;>
+                                    <div  id="view_photoalbum_37_{$num}" class="yibuSmartViewMargin absPos"   >
+                                        <div class='yibuFrameContent overflow_hidden photoalbum_Style1_Item0 view_photoalbum_37_{$num}_Style1_Item0' style='height:220px;width:1000px;'><div id="w_slider_view_photoalbum_37_{$num}" class="w_slider w_sliders_view_photoalbum_37_{$num}" style="width:100%;height:100%;">
+                                            <div class="w_slider_num">
+                                                <ul   style="display:none;"   >
+                                                    {volist name="adList" id="vo" key="i"}
+                                                    <li style="font-size:12px;">{$i}</li>
+                                                    {/volist}
+                                                </ul>
+                                            </div>
+                                            <div class="w_slider_img">
+                                                <ul>
+                                                    {volist name="adList" id="vo" key="i"}
+                                                    <li style="width:1000px; height:220px;">
+                                                        <a title="00{$i}"
+                                                           href="javascript:void(0)"    target="_self">
+                                                            <img style="height:220px" class="lazyload" src="/static/air/img.bj.wezhan.cn/transparent.gif"  data-original="{$vo.pic}" onload="DynamicLoad(this)" title="00{$i}" alt="图片{$i}" />
+                                                        </a>
+                                                    </li>
+                                                    {/volist}
+                                                </ul>
+                                            </div>
+
+                                            <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+                                            <a   style="display:none;"     class="prev" href="javascript:void(0)"></a>
+                                            <a   style="display:none;"     class="next" href="javascript:void(0)"></a>
+
+                                        </div>
+
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $(".w_sliders_view_photoalbum_37_{$num}").slide({
+                                                        mainCell: $(".w_sliders_view_photoalbum_37_{$num} .w_slider_img ul"),
+                                                        titCell: $(".w_sliders_view_photoalbum_37_{$num} .w_slider_num li"),
+                                                        effect: "fade",
+                                                        autoPlay: "true",
+                                                        trigger: "click",
+                                                        interTime: "3000"
+                                                    });
+                                                });
+
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <script type="text/javascript">
+                                    function setLayoutHeight() {
+                                        var bannerheight = $("#view_banner_56_{$num}").css("height");
+                                        $("#view_banner_56_{$num}").children(".yibuFrameContent").css("height", bannerheight);
+                                    };
+                                </script></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
