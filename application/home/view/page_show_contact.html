@@ -1,652 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-type" content="text/html;charset=utf-8"/>
-
-    <meta name="renderer" content="webkit"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="format-detection" content="telephone=no, email=no"/>
-    <link rel="icon" href="http://img.bj.wezhan.cn/2006291_favicon.ico?t=201811162151455582"/>
-    <link rel="shortcut icon" href="http://img.bj.wezhan.cn/2006291_favicon.ico?t=201811162151455582"/>
-    <link rel="bookmark" href="http://img.bj.wezhan.cn/2006291_favicon.ico?t=201811162151455582"/>
-
-    <title>{$info['title']??($title ? $title : $sys.title)}</title>
-    <meta name="description" content="{$info['description']??($description ? $description : $sys.des)}"/>
-    <meta name="keywords" content=" {$info['keywords']??($keywords ? $keywords : $sys.key)}"/>
-
-    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base.pc.css"
-           type="text/css"/>
-    <link href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/mw-iconfont/iconfont.css"
-           rel="stylesheet"/>
-    <link href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/pagerStyle/pager.css"
-           rel="stylesheet"/>
-    <link href="/static/air/img.bj.wezhan.cn/Plugins/Designer/Content/css/base/css/font-awesome.min.css"
-           rel="stylesheet"
-          type="text/css">
-    <link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/content/sitefiles2006/2006291/css/pc/274227712_zh-CN.css"
-           type="text/css"/>
-
-
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-1.9.1.min.js"
-            ></script>
-    <script type="text/javascript"
-            src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-migrate-1.2.1.min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery-ui.min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/public.common.min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.lazyload.min.js"
-            ></script>
-    <script src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/kino.razor.min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/underscore-min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/jquery.slider.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.color.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/SmartViews.Common/Script/searchExt.js"
-            ></script>
-
-    <script language='javascript' type='text/javascript' id='yibuHeaderScript'>
-    </script>
-
-
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Plugins/Designer/Script/velocity.ui.min.js"
-            ></script>
-    <script type="text/javascript" src="/static/air/img.bj.wezhan.cn/Scripts/jquery.validatestar.min.js"
-            ></script>
-</head>
-<body>
-<input type="hidden" id="pageinfo" value="274227712" data-type="" data-device="pc" data-entityid=""/>
-<form id="pageForm" enctype="multipart/form-data">
-    <input type="hidden" name="PageId" value="274227712"/>
-    <input type="hidden" id="formcookie" name="formcookie" value=""/>
-    <input type="hidden" id="device" name="device" value="Pc"/>
-    <div id="view_layout_1_277268671" class="mainSamrtView yibuSmartViewMargin">
-        <div class='yibuFrameContent layout_Block3_Item0' style='border-style:none;'>
-            <style type="text/css">
-                /* Style */
-                .page-wrap {
-                    clear: both;
-                    margin: 0 auto;
-                    padding: 0;
-                    width: auto;
-                    height: 100%;
-                }
-
-                .page-wrap .header, .page-wrap .main-wrap .main, .page-wrap .footer {
-                    position: relative;
-                    clear: both;
-                    margin: 0 auto;
-                    padding: 0;
-                }
-
-                .page-wrap .main-wrap {
-                    clear: both;
-                    margin: 0;
-                    padding: 0;
-                    width: auto;
-                }
-
-                .page-wrap .main-wrap .main .sidebar-left, .page-wrap .main-wrap .main .content {
-                    float: left;
-                    display: inline;
-                }
-
-                .page-wrap .main-wrap .main .content {
-                    float: right;
-                }
-
-                .clearfix:before, .clearfix:after {
-                    content: "";
-                    display: table;
-                }
-
-                .clearfix:after {
-                    clear: both;
-                    overflow: hidden;
-                }
-
-                .clearfix {
-                    zoom: 1;
-                }
-
-                body {
-                    background-color: #666666;
-
-                }
-            </style>
-
-            <div class="page-wrap">
-                <div style="*z-index:11;*position:relative;width:100%;height:308px;margin:0 auto;background-color:">
-                    <div class="header page_header yibuLayout_tempPanel"
-                         style="width:1000px;height:308px;background-color:;;">
-                        <div class='runTimeflowsmartView'>
-                            <div id="view_banner_32_277268671" class="yibuSmartViewMargin absPos">
-                                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_32_277268671_Style1_Item0'
-                                     style='height:73px;width:1003px;'>
-                                    <div id="fullScreen_view_banner_32_277268671"
-                                         class="w_container_wrap renderfullScreen"></div>
-                                    <script>
-                                        $(function () {
-                                            setRenderFullScreen($('#view_banner_32_277268671'));
-
-                                        });
-                                    </script>
-
-
-                                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0"
-                                         id="flowsmartView_32" style=width:1003px;>
-                                        <div id="view_image_3_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
-                                                 style='height:106px;width:252px;border-style:none;'>
-                                                <div class="megwh" style="height:100%; width:100%;">
-                                                    <a id="autosize_view_image_3_277268671" href="../wzsy.htm"
-                                                        target="_self">
-                                                        <input id="w_view_image_3_277268671" type="hidden" value="180"/>
-                                                        <input id="h_view_image_3_277268671" type="hidden" value="90"/>
-                                                        <input id="canadjustwidth_view_image_3_277268671" type="hidden"
-                                                               value="False"/>
-                                                        <input id="canadjustheight_view_image_3_277268671" type="hidden"
-                                                               value="False"/>
-                                                        <img src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png"
-                                                             
-                                                             alt="" style="border:none; position:relative;"/>
-
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="view_navigator_8_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent navigator_Style3_Item0 view_navigator_8_277268671_Style3_Item0'
-                                                 style='border-style:none;'><!--nav-->
-                                                <ul id=nav_view_navigator_8_277268671 styleItem=Style3>
-                                                    <li class=w_nav_item style=width:16.66%;*width:16.33%>
-                                                        <h3>
-                                                            <a href="../wzsy.htm" 
-                                                               target=_self>
-                                                                网站首页
-                                                            </a>
-                                                        </h3>
-                                                        {volist name="category" id="vo" offset="0" length="5"}
-                                                    <li class=w_nav_item style=width:16.66%;*width:16.33%>
-                                                        <h3>
-                                                            <a href="#">
-                                                                {$vo.catname}
-                                                            </a>
-                                                        </h3>
-                                                        <ul class=w_subnav style=width:83.17px;*left:0px;>
-                                                            {volist name="$vo.sub" id="v"}
-                                                            <li class=w_subnav_item>
-                                                                <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$v['id']] )}">
-                                                                    {$v.catname}
-                                                                </a>
-                                                            </li>
-                                                            {/volist}
-
-                                                        </ul>
-                                                    </li>
-                                                    {/volist}
-                                                </ul>
-
-                                                <!--/nav-->
-                                                <input type="hidden" id="HeightVariablesStr_view_navigator_8_277268671"
-                                                       value="$height:31px;$Item_height:31px;$SubItem_height:31px;"/>
-                                                <script>
-                                                    $(function () {
-                                                        slideMenu("nav_" + 'view_navigator_8_277268671');
-                                                        jQuery("#nav_" + 'view_navigator_8_277268671').parent("div").css("overflow", "visible");
-                                                        var isDivider = true;
-
-                                                        //子导航下边框显示不出来的fix
-                                                        $("#nav_" + 'view_navigator_8_277268671').children("li").each(function () {
-                                                            var Li_height = $(this).height();
-                                                            $("li", this).height(Li_height);
-
-                                                            var child_li = $("li", this);
-                                                            var topborderwidth = $("a:first", child_li).css('border-top-width');
-                                                            topborderwidth = isNaN(parseInt(topborderwidth)) ? 0 : parseInt(topborderwidth);
-                                                            var bottomborderwidth = $("a:first", child_li).css('border-bottom-width');
-                                                            bottomborderwidth = isNaN(parseInt(bottomborderwidth)) ? 0 : parseInt(bottomborderwidth);
-
-                                                            var aheight = Li_height - topborderwidth - bottomborderwidth;
-                                                            $("a", child_li).height(aheight);
-                                                        });
-
-                                                        jQuery("#nav_" + 'view_navigator_8_277268671').children("li").each(function () {
-                                                            var topWidth = $(this).children("h3").children("a").css("border-top-width");
-                                                            var leftWidth = $(this).children("h3").children("a").css("border-left-width");
-                                                            var bottomWidth = $(this).children("h3").children("a").css("border-bottom-width");
-                                                            if (topWidth != "0" && topWidth != "0px") {
-                                                                isDivider = false;
-                                                                return false;
-                                                            }
-                                                            if (leftWidth != "0" && leftWidth != "0px") {
-                                                                isDivider = false;
-                                                                return false;
-                                                            }
-                                                            if (bottomWidth != "0" && bottomWidth != "0px") {
-                                                                isDivider = false;
-                                                                return false;
-                                                            }
-                                                            if ($(this).children("ul").length > 0) {
-                                                                var maxWidth = $(this).children("ul").width();
-                                                                $(this).children("ul").children("li").each(function () {
-                                                                    var a = $(this).children("a");
-                                                                    var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 20;
-
-                                                                    if (maxWidth < currentWidth)
-                                                                        maxWidth = currentWidth;
-                                                                });
-                                                                $(this).children("ul").css("width", maxWidth + "px");
-                                                            }
-
-                                                        });
-                                                        //if (isDivider)
-                                                        //    jQuery("#nav_" + 'view_navigator_8_277268671').children("li:last").children("h3").children("a").css("border-right-width", "0px");//去掉最后一项的分隔线
-
-                                                        if ("False" == "False") {
-                                                            jQuery("#" + 'view_navigator_8_277268671').css("z-index", "999999");
-                                                            if (jQuery("#" + 'view_navigator_8_277268671').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
-                                                                jQuery("#" + 'view_navigator_8_277268671').parent(".w_container_content").parent().parent().css("z-index", "999998");
-                                                            }
-                                                        }
-                                                        SetNavSelectedStyle("nav_" + 'view_navigator_8_277268671', 'nav');//选中当前导航
-                                                    })
-
-                                                </script>
-
-                                            </div>
-                                        </div>
-                                        <div id="view_search_36_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent overflow_hidden search_Style2_Item0 view_search_36_277268671_Style2_Item0'
-                                                 style='height:25px;width:185px;'><!--w_search-->
-                                                <!--fontfamily_select-->
-                                                <div style="position: absolute; top: 0px; filter: alpha(opacity=0);opacity:0;background-color: #777; z-index: 2; left: 0px; display:none; width: 100%; height: 100%;">
-                                                </div>
-                                                <div class="w-search" id="Style2">
-                                                    <!--w_search_head-->
-                                                    <div class="w-search-container f_clearfix">
-                                                        <div class="w-search-input-left">
-                                                            <input type="text" class="w-search-input"
-                                                                   placeholder="请输入关键字"/>
-                                                            <!--搜索检索-->
-                                                        </div>
-                                                        <button class="w-search-btn" type="button">
-                                                            <i class="iconfont"></i>
-                                                        </button>
-
-                                                    </div>
-                                                    <!--/w_search_head-->
-                                                </div>
-                                                <!--/w_search-->
-                                                <!--/w_search-->
-                                                <script typeof="text/javascript">
-                                                    $(function () {
-                                                        var hoverIcon = "";
-                                                        if (hoverIcon != "") {
-                                                            var obj = $("#view_search_36_277268671").find(".w-search-btn i");
-                                                            obj.unbind("hover");
-                                                            obj.hover(function () {
-                                                                    $(this).html(hoverIcon);
-                                                                },
-                                                                function () {
-                                                                    $(this).html("");
-                                                                });
-                                                        }
-                                                        var $deleteIcon = $("#view_search_36_277268671 #delete_icon");
-                                                        var $searchText = $("#view_search_36_277268671 .w-search-input");
-
-                                                        function InitDefaultValue() {
-                                                            if ($searchText.val() == '请输入关键字') {
-                                                                $searchText.val('');
-                                                                $deleteIcon.hide();
-                                                            }
-                                                            else {
-                                                                if ($searchText.val().length > 0)
-                                                                    $deleteIcon.show();
-                                                            }
-                                                        }
-
-                                                        $searchText.keyup(function () {
-                                                            InitDefaultValue();
-                                                        })
-                                                            .click(function () {
-                                                                InitDefaultValue();
-                                                            });
-                                                        $("#searchlist li").hover(function () {
-                                                            $(this).parent().find("a").removeClass("current");
-                                                            $(this).find("a").addClass("current")
-                                                        });
-                                                        $('#view_search_36_277268671 .w-search-input').bind('input propertychange', function () {
-                                                            $("#view_search_36_277268671").css("z-Index", "1999999");
-                                                            var searchText = $(this).val();
-                                                            $("#view_search_36_277268671 #searchlist").toggle(searchText.length > 0);
-                                                            $("#view_search_36_277268671 #ArticleResultTemplate a").text("在文章内搜索\"" + searchText + "\"");
-                                                            $("#view_search_36_277268671 #ProductResultTemplate a").text("在产品内搜索\"" + searchText + "\"");
-                                                        });
-                                                        $("#view_search_36_277268671 .w-search-input").blur(function () {
-                                                            setTimeout(function () {
-                                                                $("#view_search_36_277268671 #searchlist").hide();
-                                                            }, 500);
-                                                        });
-                                                        //点击下拉的搜索项
-                                                        $("#view_search_36_277268671 #searchlist li").click(function () {
-                                                            var keyword = $("#view_search_36_277268671").find(".w-search-input").val();
-                                                            var searchCategory = $(this).attr("id");
-                                                            if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
-                                                                alert("搜索关键字不能为空")
-                                                                return;
-                                                            }
-                                                            if ("False".toLocaleLowerCase() != "true") {
-                                                                if ("False".toLocaleLowerCase() == "false") {
-                                                                    window.location.href = "../searchresultlist-keyword=.htm"/*tpa=http://www.h-bahn.cn/searchresultlist?keyword=*/ + keyword + "&searchCategory=" + searchCategory;
-                                                                } else {
-                                                                    TurnNewPageSmartView("277268671", "", "False", keyword, "false");
-                                                                }
-                                                            }
-                                                            $("#view_search_36_277268671 #searchlist").hide();
-                                                            $("#view_search_36_277268671").css("z-Index", "199");
-                                                        });
-
-                                                        $("#view_search_36_277268671 .w-search-btn").click(function () {
-                                                            var keyword = $("#view_search_36_277268671").find(".w-search-input").val();
-                                                            if (keyword.replace(/(^\s*)|(\s*$)/g, "") == "") {
-                                                                if ("2" == "1") {
-                                                                    alert("Search keywords cannot be empty")
-                                                                } else {
-                                                                    alert("搜索关键字不能为空")
-                                                                }
-                                                                return;
-                                                            }
-                                                            var searchCategory = "";
-                                                            var cate = 0;
-                                                            var catename = "全部";
-
-                                                            searchCategory = cate + "|" + catename;
-                                                            //新版本重新获取searchCategory
-                                                            if ("" == "product" || ("" == "all" && "on" != "on")) {
-                                                                searchCategory = "ProductResultTemplate";
-                                                            } else if ("" == "news" || ("" == "all" && "on" == "on")) {
-                                                                searchCategory = "ArticleResultTemplate";
-                                                            }
-                                                            if ("False".toLocaleLowerCase() != "true")
-
-                                                                if ("False".toLocaleLowerCase() == "false") {
-                                                                    window.location.href = "../searchresultlist-keyword=.htm"/*tpa=http://www.h-bahn.cn/searchresultlist?keyword=*/ + keyword + "&searchCategory=" + searchCategory;
-                                                                } else {
-                                                                    if ("False".toLocaleLowerCase() != "true") {
-                                                                        //老版本当前页显示
-                                                                        TurnPageSmartView("277268671", "", "False", "1", "", "", cate + "|" + catename, keyword, "false");
-                                                                    } else {
-                                                                        //新版本（精简）
-                                                                        TurnNewPageSmartView("277268671", "", "False", keyword, "false");
-                                                                    }
-                                                                }
-                                                            $("#view_search_36_277268671 #searchlist").hide();
-                                                            $("#view_search_36_277268671").css("z-Index", "199");
-                                                        });
-                                                        $("#view_search_36_277268671 .w-search-input").keydown(function (e) {
-                                                            $("#view_search_36_277268671").css("z-Index", "1999999");
-                                                            if (e.keyCode == 13) {
-                                                                $("#view_search_36_277268671 .w-search-btn").click();
-                                                            }
-                                                        });
-                                                        var elementId = 'view_search_36_277268671';
-                                                        var $searchWrap = $("#" + elementId + " .w-search").parent().parent();
-                                                        var $searchButton = $("#" + elementId + " .w-search-btn")
-                                                        var $searchInput = $("#" + elementId + " .w-search-input");
-                                                        var inputBorderWidth = parseInt($searchInput.css('border-left-width')) + parseInt($searchInput.css('border-right-width'));
-                                                        var inputButtonWidth = parseInt($searchButton.css('border-left-width')) + parseInt($searchButton.css('border-right-width'));
-                                                        var searchInputWidth = $searchWrap.width() - $searchButton.width() - inputBorderWidth - inputButtonWidth - 15;
-                                                        var searchInputHeight = $searchButton.height();
-                                                        if (searchInputWidth <= 70) {
-                                                            searchInputWidth = 70;
-                                                            $("#" + elementId).children().eq(0).width(90 + $searchButton.width());
-                                                        }
-                                                        $("#" + elementId + " .w-search").width("auto");
-                                                        $searchInput.width(searchInputWidth);
-                                                        $searchInput.height($("#" + elementId).height() - 6);
-                                                        $searchInput.css("line-height", ($("#" + elementId).height() - 6) + "px");
-                                                        $searchButton.height($("#" + elementId).height() - 6);
-                                                        $searchButton.css("line-height", ($("#" + elementId).height() - 6) + "px");
-                                                        $("#view_search_36_277268671 .yibuFrameContent").removeClass("overflow_hidden");
-                                                        $("#" + elementId).find("#searchlist").css("top", $searchInput.css("height"))
-                                                    });
-
-                                                </script>
-                                            </div>
-                                        </div>
-                                        <div id="view_image_62_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
-                                                 style='height:18px;width:49px;'>
-                                                <div class="megwh" style="height:100%; width:100%;">
-                                                    <a id="autosize_view_image_62_277268671" href="javascript:void(0)"
-                                                       target="_self">
-                                                        <input id="w_view_image_62_277268671" type="hidden"
-                                                               value="480"/>
-                                                        <input id="h_view_image_62_277268671" type="hidden"
-                                                               value="300"/>
-                                                        <input id="canadjustwidth_view_image_62_277268671" type="hidden"
-                                                               value="False"/>
-                                                        <input id="canadjustheight_view_image_62_277268671"
-                                                               type="hidden" value="False"/>
-                                                        <img src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300393__c_5hWfXVxNL-vmKwXDX86s7VymqDoUy1HxWoZY-ZrwyAbQMuQ8mJrQ205V2TW10usXNKPvlOu6VFJM-yYLkDmLUg--_feb3e7fe-acc4-4508-a3dd-f6ccd2c63161_resize_picture.gif.png"
-                                                             
-                                                             alt="" style="border:none; position:relative;"/>
-
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="view_image_63_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
-                                                 style='height:18px;width:47px;'>
-                                                <div class="megwh" style="height:100%; width:100%;">
-                                                    <a id="autosize_view_image_63_277268671" href="277268706.htm"
-                                                        target="_self">
-                                                        <input id="w_view_image_63_277268671" type="hidden"
-                                                               value="480"/>
-                                                        <input id="h_view_image_63_277268671" type="hidden"
-                                                               value="300"/>
-                                                        <input id="canadjustwidth_view_image_63_277268671" type="hidden"
-                                                               value="False"/>
-                                                        <input id="canadjustheight_view_image_63_277268671"
-                                                               type="hidden" value="False"/>
-                                                        <img src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6300398__c_u4prMCfjPPGOKMJMprydOBvERDuQBDk-232NpLa1ToaXNBhh1BJx8eDK7YVYCMuvJWjw0AFEvghwqLZi0s2COA--_1eb84505-5dcf-44c3-be9d-9f17dfbea4d6_resize_picture.gif.png"
-                                                             
-                                                             alt="" style="border:none; position:relative;"/>
-
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="view_text_35_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
-                                                 style='height:26px;width:143px;'>
-                                                <style type="text/css">
-                                                    #view_text_35_277268671_txt ul {
-                                                        padding-left: 20px;
-                                                    }
-                                                </style>
-                                                <div id='view_text_35_277268671_txt'
-                                                     style="cursor:default; height:100%; width:100%;">
-                                                    <div class="editableContent " style="line-height:1.5;">
-                                                        <p><span
-                                                                style="color: rgb(255, 255, 224); font-family: 宋体; line-height: 24px; widows: auto;">国际空列集团欢迎您</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <script>
-                                                    Pagination('view_text_35_277268671_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_35_277268671);
-
-                                                    function textPageCallbackview_text_35_277268671() {
-
-                                                        $(".absPos").each(function () {
-                                                            $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '')
-                                                        });
-
-                                                        if ($("#view_text_35_277268671").parent(".w_tab_container_item ").length > 0) {
-                                                            $("#view_text_35_277268671").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
-                                                        }
-                                                        if ($("#view_text_35_277268671").parents(".w_tab_container").length > 0) {
-                                                            $("#view_text_35_277268671").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
-                                                        }
-                                                        if ($("#view_text_35_277268671").parents(".w_tab").length > 0) {
-                                                            $("#view_text_35_277268671").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
-                                                        }
-
-
-                                                        yiburecomputeLayoutHeight();
-                                                        initScrollHeight_view_text_35_277268671();
-
-                                                    }
-
-                                                    function initScrollHeight_view_text_35_277268671() {
-                                                        var currentHeight = $("#view_text_35_277268671").height();
-                                                        var oldHeight = window["view_text_35_277268671" + "_height"];
-                                                        window["view_text_35_277268671" + "_height"] = currentHeight;
-                                                        if (oldHeight != undefined) {
-                                                            var subtract = currentHeight - oldHeight;
-                                                            if (subtract < 0) {
-
-                                                                if ($("#view_text_35_277268671").parents(".mainSamrtView").length > 0) {
-                                                                    $("#view_text_35_277268671").parents(".mainSamrtView").each(function () {
-                                                                        if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
-                                                                            var height = $(this).height();
-                                                                            var oheight = $(this).attr("oheight");
-
-                                                                            var expandh = $(this).attr("expandh");
-                                                                            if (oheight != undefined && expandh != undefined) {
-                                                                                oheight = parseInt(oheight);
-                                                                                expandh = parseInt(expandh);
-                                                                                expandh = expandh + subtract;
-                                                                                var newHeight = oheight + expandh;
-                                                                                $(this).height(newHeight);
-                                                                                $(this).attr("expandh", expandh);
-                                                                                if ($(this).children(".yibuFrameContent").length > 0) {
-                                                                                    if ($(this).children(".yibuFrameContent").attr("style") != undefined && $(this).children(".yibuFrameContent").attr("style").toLowerCase().indexOf('height') > -1) {
-                                                                                        $(this).children(".yibuFrameContent").height(newHeight);
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-
-                                                                    });
-                                                                }
-                                                            }
-                                                        }
-                                                        var $txtControl = $('#view_text_35_277268671');
-                                                        $txtControl.find('img').css({'max-width': $txtControl.width() + 'px'});
-                                                    }
-
-                                                    $('#view_text_35_277268671').each(function () {
-                                                        $(this).find('img').css({'max-width': $(this).width() + 'px'});
-                                                    });
-                                                    $(function () {
-                                                        window["view_text_35_277268671" + "_height"] = $("#view_text_35_277268671").height();
-                                                        $('#view_text_35_277268671').each(function () {
-                                                            $(this).find('img').css({'max-width': $(this).width() + 'px'});
-                                                        });
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <script type="text/javascript">
-                                        function setLayoutHeight() {
-                                            var bannerheight = $("#view_banner_32_277268671").css("height");
-                                            $("#view_banner_32_277268671").children(".yibuFrameContent").css("height", bannerheight);
-                                        };
-                                    </script>
-                                </div>
-                            </div>
-                            <div id="view_banner_56_277268671" class="yibuSmartViewMargin absPos">
-                                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_56_277268671_Style1_Item0'
-                                     style='height:232px;width:1006px;'>
-                                    <div id="fullScreen_view_banner_56_277268671"
-                                         class="w_container_wrap renderfullScreen"></div>
-                                    <script>
-                                        $(function () {
-                                            setRenderFullScreen($('#view_banner_56_277268671'));
-
-                                        });
-                                    </script>
-
-
-                                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0"
-                                         id="flowsmartView_56" style=width:1006px;>
-                                        <div id="view_photoalbum_37_277268671" class="yibuSmartViewMargin absPos">
-                                            <div class='yibuFrameContent overflow_hidden photoalbum_Style1_Item0 view_photoalbum_37_277268671_Style1_Item0'
-                                                 style='height:220px;width:1000px;'>
-                                                <div id="w_slider_view_photoalbum_37_277268671"
-                                                     class="w_slider w_sliders_view_photoalbum_37_277268671"
-                                                     style="width:100%;height:100%;">
-                                                    <div class="w_slider_num">
-                                                        <ul style="display:none;">
-                                                            {volist name="adList" id="vo" key="i"}
-                                                            <li style="font-size:12px;">{$i}</li>
-                                                            {/volist}
-                                                        </ul>
-                                                    </div>
-                                                    <div class="w_slider_img">
-                                                        <ul>
-                                                            {volist name="adList" id="vo" key="i"}
-                                                            <li style="width:1000px; height:220px;">
-                                                                <a title="00{$i}"
-                                                                   href="javascript:void(0)" target="_self">
-                                                                    <img style="height:220px" class="lazyload"
-                                                                         src="/static/air/img.bj.wezhan.cn/transparent.gif"
-                                                                         data-original="{$vo.pic}"
-                                                                         onload="DynamicLoad(this)" title="00{$i}"
-                                                                         alt="图片{$i}"/>
-                                                                </a>
-                                                            </li>
-                                                            {/volist}
-                                                        </ul>
-                                                    </div>
-
-                                                    <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
-                                                    <a style="display:none;" class="prev" href="javascript:void(0)"></a>
-                                                    <a style="display:none;" class="next" href="javascript:void(0)"></a>
-
-                                                </div>
-
-                                                <script type="text/javascript">
-                                                    $(function () {
-                                                        $(".w_sliders_view_photoalbum_37_277268671").slide({
-                                                            mainCell: $(".w_sliders_view_photoalbum_37_277268671 .w_slider_img ul"),
-                                                            titCell: $(".w_sliders_view_photoalbum_37_277268671 .w_slider_num li"),
-                                                            effect: "fade",
-                                                            autoPlay: "true",
-                                                            trigger: "click",
-                                                            interTime: "3000"
-                                                        });
-                                                    });
-
-                                                </script>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <script type="text/javascript">
-                                        function setLayoutHeight() {
-                                            var bannerheight = $("#view_banner_56_277268671").css("height");
-                                            $("#view_banner_56_277268671").children(".yibuFrameContent").css("height", bannerheight);
-                                        };
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<?php $num =277268671;  ?>
+{include file="common/head"/}
+<link rel="stylesheet" href="/static/air/img.bj.wezhan.cn/content/sitefiles2006/2006291/css/pc/274227712_zh-CN.css"
+      type="text/css"/>
                 <div class="main-wrap clearfix"
                      style="*z-index:10;*position:relative;width:100%;margin-left:auto;margin-right:auto;;background-color:">
                     <div class="main clearfix page_main" style="width:1000px;margin-left:auto;margin-right:auto;">
@@ -654,27 +9,27 @@
                              style="width:220px;height:404px;background-color:#ffffff;;">
                             <div class="yibuFrameContent">
                                 <div class='runTimeflowsmartView'>
-                                    <div id="view_banner_57_277268671" class="yibuSmartViewMargin absPos">
-                                        <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_57_277268671_Style1_Item0'
+                                    <div id="view_banner_57_{$num}" class="yibuSmartViewMargin absPos">
+                                        <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_57_{$num}_Style1_Item0'
                                              style='height:401px;width:219px;'>
                                             <script>
                                                 $(function () {
-                                                    $("#view_banner_57_277268671").children("div").css("overflow", "visible");
+                                                    $("#view_banner_57_{$num}").children("div").css("overflow", "visible");
                                                 })
                                             </script>
 
 
                                             <div class="flowsmartView isflowcontainer w_container_content"
                                                  refarea="Area_0" id="flowsmartView_57">
-                                                <div id="view_text_58_277268671" class="yibuSmartViewMargin absPos">
+                                                <div id="view_text_58_{$num}" class="yibuSmartViewMargin absPos">
                                                     <div class='yibuFrameContent overflow_hidden text_Style1_Item0'
                                                          style='height:22px;width:91px;'>
                                                         <style type="text/css">
-                                                            #view_text_58_277268671_txt ul {
+                                                            #view_text_58_{$num}_txt ul {
                                                                 padding-left: 20px;
                                                             }
                                                         </style>
-                                                        <div id='view_text_58_277268671_txt'
+                                                        <div id='view_text_58_{$num}_txt'
                                                              style="cursor:default; height:100%; width:100%;">
                                                             <div class="editableContent " style="line-height:1.5;">
                                                                 <p><span
@@ -683,40 +38,40 @@
                                                             </div>
                                                         </div>
                                                         <script>
-                                                            Pagination('view_text_58_277268671_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_58_277268671);
+                                                            Pagination('view_text_58_{$num}_txt', "首页", "尾页", "上一页", "下一页", textPageCallbackview_text_58_{$num});
 
-                                                            function textPageCallbackview_text_58_277268671() {
+                                                            function textPageCallbackview_text_58_{$num}() {
 
                                                                 $(".absPos").each(function () {
                                                                     $(this).removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '')
                                                                 });
 
-                                                                if ($("#view_text_58_277268671").parent(".w_tab_container_item ").length > 0) {
-                                                                    $("#view_text_58_277268671").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                                if ($("#view_text_58_{$num}").parent(".w_tab_container_item ").length > 0) {
+                                                                    $("#view_text_58_{$num}").parent(".w_tab_container_item ").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
                                                                 }
-                                                                if ($("#view_text_58_277268671").parents(".w_tab_container").length > 0) {
-                                                                    $("#view_text_58_277268671").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                                if ($("#view_text_58_{$num}").parents(".w_tab_container").length > 0) {
+                                                                    $("#view_text_58_{$num}").parents(".w_tab_container").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
                                                                 }
-                                                                if ($("#view_text_58_277268671").parents(".w_tab").length > 0) {
-                                                                    $("#view_text_58_277268671").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
+                                                                if ($("#view_text_58_{$num}").parents(".w_tab").length > 0) {
+                                                                    $("#view_text_58_{$num}").parents(".w_tab").removeAttr("oldbottom").removeAttr("expandh").removeAttr("oheight").removeAttr("cheight").css("min-height", '').css("height", '').css("top", '');
                                                                 }
 
 
                                                                 yiburecomputeLayoutHeight();
-                                                                initScrollHeight_view_text_58_277268671();
+                                                                initScrollHeight_view_text_58_{$num}();
 
                                                             }
 
-                                                            function initScrollHeight_view_text_58_277268671() {
-                                                                var currentHeight = $("#view_text_58_277268671").height();
-                                                                var oldHeight = window["view_text_58_277268671" + "_height"];
-                                                                window["view_text_58_277268671" + "_height"] = currentHeight;
+                                                            function initScrollHeight_view_text_58_{$num}() {
+                                                                var currentHeight = $("#view_text_58_{$num}").height();
+                                                                var oldHeight = window["view_text_58_{$num}" + "_height"];
+                                                                window["view_text_58_{$num}" + "_height"] = currentHeight;
                                                                 if (oldHeight != undefined) {
                                                                     var subtract = currentHeight - oldHeight;
                                                                     if (subtract < 0) {
 
-                                                                        if ($("#view_text_58_277268671").parents(".mainSamrtView").length > 0) {
-                                                                            $("#view_text_58_277268671").parents(".mainSamrtView").each(function () {
+                                                                        if ($("#view_text_58_{$num}").parents(".mainSamrtView").length > 0) {
+                                                                            $("#view_text_58_{$num}").parents(".mainSamrtView").each(function () {
                                                                                 if ($(this).attr("style") != undefined && $(this).attr("style").toLowerCase().indexOf('height') > -1) {
                                                                                     var height = $(this).height();
                                                                                     var oheight = $(this).attr("oheight");
@@ -741,27 +96,27 @@
                                                                         }
                                                                     }
                                                                 }
-                                                                var $txtControl = $('#view_text_58_277268671');
+                                                                var $txtControl = $('#view_text_58_{$num}');
                                                                 $txtControl.find('img').css({'max-width': $txtControl.width() + 'px'});
                                                             }
 
-                                                            $('#view_text_58_277268671').each(function () {
+                                                            $('#view_text_58_{$num}').each(function () {
                                                                 $(this).find('img').css({'max-width': $(this).width() + 'px'});
                                                             });
                                                             $(function () {
-                                                                window["view_text_58_277268671" + "_height"] = $("#view_text_58_277268671").height();
-                                                                $('#view_text_58_277268671').each(function () {
+                                                                window["view_text_58_{$num}" + "_height"] = $("#view_text_58_{$num}").height();
+                                                                $('#view_text_58_{$num}').each(function () {
                                                                     $(this).find('img').css({'max-width': $(this).width() + 'px'});
                                                                 });
                                                             });
                                                         </script>
                                                     </div>
                                                 </div>
-                                                <div id="view_navigator_59_277268671"
+                                                <div id="view_navigator_59_{$num}"
                                                      class="yibuSmartViewMargin absPos">
-                                                    <div class='yibuFrameContent navigator_Style5_Item0 view_navigator_59_277268671_Style5_Item0'>
+                                                    <div class='yibuFrameContent navigator_Style5_Item0 view_navigator_59_{$num}_Style5_Item0'>
                                                         <!--nav-->
-                                                        <ul id=nav_view_navigator_59_277268671 styleItem=Style5>
+                                                        <ul id=nav_view_navigator_59_{$num} styleItem=Style5>
                                                             {volist name="child" id="vo"}
                                                             <li class="w_vnav_item {if condition=" input(
                                                             'catId')==$vo['id']"}w_vnav_item_current{/if}">
@@ -779,13 +134,13 @@
 
 
                                                         <input type="hidden"
-                                                               id="HeightVariablesStr_view_navigator_59_277268671"
+                                                               id="HeightVariablesStr_view_navigator_59_{$num}"
                                                                value="$Item_height:26.5px;$SubItem_height:26.5px;"/>
                                                         <script>
                                                             $(function () {
-                                                                jQuery("#nav_" + 'view_navigator_59_277268671').parent("div").css("overflow", "visible");
+                                                                jQuery("#nav_" + 'view_navigator_59_{$num}').parent("div").css("overflow", "visible");
                                                                 var isDivider = true;
-                                                                jQuery("#nav_" + 'view_navigator_59_277268671').children("li").each(function () {
+                                                                jQuery("#nav_" + 'view_navigator_59_{$num}').children("li").each(function () {
                                                                     var topWidth = $(this).children("h3").children("a").css("border-top-width");
                                                                     var leftWidth = $(this).children("h3").children("a").css("border-left-width");
                                                                     var rightWidth = $(this).children("h3").children("a").css("border-right-width");
@@ -817,32 +172,32 @@
                                                                     }
                                                                 });
                                                                 //if (isDivider)
-                                                                //    jQuery("#nav_" + 'view_navigator_59_277268671').children("li:last").children("h3").children("a").css("border-bottom-width", "0px");//去掉最后一项的分隔线
+                                                                //    jQuery("#nav_" + 'view_navigator_59_{$num}').children("li:last").children("h3").children("a").css("border-bottom-width", "0px");//去掉最后一项的分隔线
                                                                 if ("False" == "False") {
-                                                                    jQuery("#" + 'view_navigator_59_277268671').css("z-index", "999999");
-                                                                    if (jQuery("#" + 'view_navigator_59_277268671').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
-                                                                        jQuery("#" + 'view_navigator_59_277268671').parent(".w_container_content").parent().parent().css("z-index", "999998");
+                                                                    jQuery("#" + 'view_navigator_59_{$num}').css("z-index", "999999");
+                                                                    if (jQuery("#" + 'view_navigator_59_{$num}').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
+                                                                        jQuery("#" + 'view_navigator_59_{$num}').parent(".w_container_content").parent().parent().css("z-index", "999998");
                                                                     }
                                                                 }
-                                                                SetNavSelectedStyle("nav_" + 'view_navigator_59_277268671', 'vnav');//选中当前导航
+                                                                SetNavSelectedStyle("nav_" + 'view_navigator_59_{$num}', 'vnav');//选中当前导航
                                                             })
 
                                                         </script>
                                                     </div>
                                                 </div>
-                                                <div id="view_image_60_277268671" class="yibuSmartViewMargin absPos">
+                                                <div id="view_image_60_{$num}" class="yibuSmartViewMargin absPos">
                                                     <div class='yibuFrameContent overflow_hidden image_Style1_Item0'
                                                          style='height:223px;width:182px;'>
                                                         <div class="megwh" style="height:100%; width:100%;">
-                                                            <a id="autosize_view_image_60_277268671"
+                                                            <a id="autosize_view_image_60_{$num}"
                                                                href="javascript:void(0)" target="_self">
-                                                                <input id="w_view_image_60_277268671" type="hidden"
+                                                                <input id="w_view_image_60_{$num}" type="hidden"
                                                                        value="176"/>
-                                                                <input id="h_view_image_60_277268671" type="hidden"
+                                                                <input id="h_view_image_60_{$num}" type="hidden"
                                                                        value="215"/>
-                                                                <input id="canadjustwidth_view_image_60_277268671"
+                                                                <input id="canadjustwidth_view_image_60_{$num}"
                                                                        type="hidden" value="False"/>
-                                                                <input id="canadjustheight_view_image_60_277268671"
+                                                                <input id="canadjustheight_view_image_60_{$num}"
                                                                        type="hidden" value="False"/>
                                                                 <img src="/static/air/img1.bj.wezhan.cn/content/sitefiles/2006291/images/6298685_tu22_3b38797c-1436-4aab-b765-b736770d958f_resize_picture.png"
                                                                      
@@ -856,8 +211,8 @@
                                             </div>
                                             <script type="text/javascript">
                                                 function setLayoutHeight() {
-                                                    var bannerheight = $("#view_banner_57_277268671").css("height");
-                                                    $("#view_banner_57_277268671").children(".yibuFrameContent").css("height", bannerheight);
+                                                    var bannerheight = $("#view_banner_57_{$num}").css("height");
+                                                    $("#view_banner_57_{$num}").children(".yibuFrameContent").css("height", bannerheight);
                                                 };
                                             </script>
                                         </div>
@@ -1726,5 +1081,5 @@
                         </div>
                     </div>
                 </div>
-                <?php $num =277268671;  ?>
+
                 {include file="common/footer"/}

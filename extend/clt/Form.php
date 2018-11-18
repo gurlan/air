@@ -90,10 +90,10 @@ class Form{
         $stylestr .='</div>';
 
         //标题颜色及是否加粗
-        $stylestr .='<div class="layui-form-item"><label class="layui-form-label">标题颜色</label>';
-        $stylestr .='<div class="layui-input-4"><input type="text" name="style_color" id="style_color" value="'.$style_color.'"/></div></div>';
-        $stylestr .='<div class="layui-form-item"><label class="layui-form-label">加粗</label>';
-        $stylestr .='<div class="layui-input-4"><input type="checkbox" name="style_bold" value="bold" '.$boldchecked.' title="加粗">';
+        $stylestr .='<div class="layui-form-item" style="display: none"><label class="layui-form-label">标题颜色</label>';
+        $stylestr .='<div class="layui-input-4" style="display: none"><input type="text" name="style_color" id="style_color" value="'.$style_color.'"/></div></div>';
+        $stylestr .='<div class="layui-form-item" style="display: none"><label class="layui-form-label">加粗</label>';
+        $stylestr .='<div class="layui-input-4" style="display: none"><input type="checkbox" name="style_bold" value="bold" '.$boldchecked.' title="加粗">';
 
         //缩略图
         $thumbstr ='</div></div>';

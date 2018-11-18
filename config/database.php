@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'air',
+    'database'        => 'air_hexiflower_',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'air_hexiflower_',
     // 密码
-    'password'        => 'root',
+    'password'        => 't8Q2xxkA3BFjYJnC',
     // 端口
     'hostport'        => '3306',
     // 连接dsn
