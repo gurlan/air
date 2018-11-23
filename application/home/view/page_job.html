@@ -1,0 +1,235 @@
+<?php $num = 277267919;  ?>
+{include file="common/head"/}
+<link rel="stylesheet" href="/static/air/content/sitefiles2006/2006291/css/pc/274227685_zh-CN.css" type="text/css" />
+            <div class="main-wrap clearfix" style="*z-index:10;*position:relative;width:100%;margin-left:auto;margin-right:auto;;background-color:">
+                <div class="main clearfix page_main" style="width:1000px;margin-left:auto;margin-right:auto;">
+                    <div class="sidebar-left page_sidebar" id="yibuLayout_sidebar" style="width:220px;height:488px;background-color:#ffffff;;">
+                        <div class='runTimeflowsmartView'><div  id="view_banner_57_{$num}" class="yibuSmartViewMargin absPos"   >
+                            <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_57_{$num}_Style1_Item0' style='height:488px;width:219px;'>    <script>
+                                $(function () {
+                                    $("#view_banner_57_{$num}").children("div").css("overflow", "visible");
+                                })
+                            </script>
+
+
+                                <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_57" >
+                                    <div  id="view_text_58_{$num}" class="yibuSmartViewMargin absPos"   >
+                                        <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:22px;width:91px;'>
+                                            <style type="text/css">
+                                                #view_text_58_{$num}_txt ul{ list-style-position:inside;}
+                                            </style>
+                                            <div id='view_text_58_{$num}_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                <div class="editableContent">
+                                                    <p><span style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">H-Bahn在中国</span></p>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                Pagination('view_text_58_{$num}_txt',"首页","尾页","上一页","下一页");
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div  id="view_navigator_59_{$num}" class="yibuSmartViewMargin absPos"   >
+                                        <div class='yibuFrameContent overflow_hidden navigator_Style5_Item0 view_navigator_59_{$num}_Style5_Item0' style='height:143px;width:163px;'><!--nav-->
+                                            <ul id=nav_view_navigator_59_{$num} styleItem=Style5>
+                                                {volist name="child" id="vo"}
+                                                <li class="w_vnav_item {if condition=" input(
+                                                'catId')==$vo['id']"}w_vnav_item_current{/if}">
+                                                <h3>
+                                                    <a href="{:url('home/'.$vo['catdir'].'/index',['catId'=>$vo['id']] )}"
+                                                       style="width: 143px" target=_self>
+                                                        {$vo.catname}
+                                                    </a>
+                                                </h3>
+                                                </li>
+                                                {/volist}
+                                            </ul>
+
+                                            <!--/nav-->
+
+
+                                            <input type="hidden" id="HeightVariablesStr_view_navigator_59_{$num}" value="$Item_height:28.6px;$SubItem_height:28.6px;" />
+                                            <script>
+                                                $(function () {
+                                                    jQuery("#nav_" + 'view_navigator_59_{$num}').parent("div").css("overflow", "visible");
+                                                    var isDivider = true;
+                                                    jQuery("#nav_" + 'view_navigator_59_{$num}').children("li").each(function () {
+                                                        var topWidth = $(this).children("h3").children("a").css("border-top-width");
+                                                        var leftWidth = $(this).children("h3").children("a").css("border-left-width");
+                                                        var rightWidth = $(this).children("h3").children("a").css("border-right-width");
+                                                        if (topWidth != "0" && topWidth != "0px") {
+                                                            isDivider = false;
+                                                            return false;
+                                                        }
+                                                        if (leftWidth != "0" && leftWidth != "0px") {
+                                                            isDivider = false;
+                                                            return false;
+                                                        }
+                                                        if (rightWidth != "0" && rightWidth != "0px") {
+                                                            isDivider = false;
+                                                            return false;
+                                                        }
+                                                        if ($(this).children("ul").length > 0) {
+                                                            var maxWidth = $(this).children("ul").width();
+                                                            $(this).children("ul").children("li").each(function () {
+                                                                var a = $(this).children("a");
+                                                                var currentWidth = GetCurrentStrWidth(a.html(), a.css("font-size")) + 46;
+
+                                                                if (maxWidth < currentWidth)
+                                                                    maxWidth = currentWidth;
+                                                            });
+                                                            $(this).children("ul").css({ "width": maxWidth + "px", "right": "-" + maxWidth + "px" });
+                                                        }
+                                                    });
+                                                    //if (isDivider)
+                                                    //    jQuery("#nav_" + 'view_navigator_59_{$num}').children("li:last").children("h3").children("a").css("border-bottom-width", "0px");//去掉最后一项的分隔线
+                                                    if ("False" == "False") {
+                                                        jQuery("#" + 'view_navigator_59_{$num}').css("z-index", "999999");
+                                                        if (jQuery("#" + 'view_navigator_59_{$num}').parent().attr("class") != "runTimeflowsmartView") {//导航可能放在容器控件中了，需要把容器控件的z-index的值设大
+                                                            jQuery("#" + 'view_navigator_59_{$num}').parent(".w_container_content").parent().parent().css("z-index", "999998");
+                                                        }
+                                                    }
+                                                    SetNavSelectedStyle("nav_" + 'view_navigator_59_{$num}', 'vnav');//选中当前导航
+                                                })
+
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div  id="view_image_60_{$num}" class="yibuSmartViewMargin absPos"   >
+                                        <div class='yibuFrameContent overflow_hidden image_Style1_Item0' style='height:216px;width:180px;'>    <div class="megwh" style="height:100%; width:100%;">
+                                            <a id="autosize_view_image_60_{$num}" href="javascript:void(0);" target="_self" >
+                                                <input id="w_view_image_60_{$num}" type="hidden" value="179" />
+                                                <input id="h_view_image_60_{$num}" type="hidden" value="213" />
+                                                <input id="canadjustwidth_view_image_60_{$num}" type="hidden" value="False" />
+                                                <input id="canadjustheight_view_image_60_{$num}" type="hidden" value="False" />
+
+                                                <img class="lazyload" src="http://img.bj.wezhan.cn/transparent.gif" data-original="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6290593_tu17_e5fc1320-abe6-4382-91f6-890b7408ec79_resize_picture.png" alt="" style="border:none; position:relative;" />
+                                            </a>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <script type="text/javascript">
+                                    function setLayoutHeight() {
+                                        var bannerheight = $("#view_banner_57_{$num}").css("height");
+                                        $("#view_banner_57_{$num}").children(".yibuFrameContent").css("height", bannerheight);
+                                    };
+                                </script></div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="content yibuTemplateBody page_container" id="yibuLayout_container" style="width:780px;background-color:#ffffff;;">
+                        <div  id="view_main_1_274227685" class="mainSamrtView yibuSmartViewMargin"   >
+                            <div class='yibuFrameContent main__Item0' style='height:580px;width:100%;'><div class='runTimeflowsmartView'><div  id="view_banner_10001_274227685" class="yibuSmartViewMargin absPos"   >
+                                <div class='yibuFrameContent overflow_hidden banner_Style1_Item0 view_banner_10001_274227685_Style1_Item0' style='height:489px;width:783px;'>    <script>
+                                    $(function () {
+                                        $("#view_banner_10001_274227685").children("div").css("overflow", "visible");
+                                    })
+                                </script>
+
+
+                                    <div class="flowsmartView isflowcontainer w_container_content" refarea="Area_0" id="flowsmartView_10001" >
+                                        <div  id="view_text_10002_274227685" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:24px;width:67px;'>
+                                                <style type="text/css">
+                                                    #view_text_10002_274227685_txt ul{ list-style-position:inside;}
+                                                </style>
+                                                <div id='view_text_10002_274227685_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                    <div class="editableContent">
+                                                        <p><span style="color: rgb(0, 116, 210); font-family: 华文细黑; font-size: 13px; font-weight: bold; line-height: 26.6667px; widows: auto; ">人力资源</span></p>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                    Pagination('view_text_10002_274227685_txt',"首页","尾页","上一页","下一页");
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div  id="view_line_10003_274227685" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden line_Style1_Item0 view_line_10003_274227685_Style1_Item0' style='height:13px;width:766px;'>
+                                                <div class="w_line"></div></div>
+                                        </div>
+                                        <div  id="view_tab_10005_274227685" class="yibuSmartViewMargin absPos"   >
+                                            <div class='yibuFrameContent overflow_hidden tab_Style6_Item0 view_tab_10005_274227685_Style6_Item0' style='height:537px;width:764px;'><div class="w_tab" id="tab_10005" styleitem="Style6">
+                                                <div class="w_tab_header">
+                                                    <ul class="w_tab_header_group">
+                                                        {volist name="job" id="v" key="i"}
+                                                        <li id="tabitem{$i}" disdata="" onclick="openUrl('','当前窗口')" class="w_tab_header_item editableContent">{$v.catname}</li>
+                                                        {/volist}
+                                                    </ul>
+                                                </div>
+                                                <div class="w_tab_container">
+
+                                                    {volist name="job" id="v" }
+                                                    <div class="flowsmartView w_tab_container_item isflowcontainer" {neq name="i" value="1"}style="display:none"{/eq}  id="flowsmartView_10005_{$i}" refarea="Area_{$i}">
+                                                        <div  id="view_text_10006_274227685" class="yibuSmartViewMargin absPos"   >
+                                                            <div class='yibuFrameContent overflow_hidden text_Style1_Item0' style='height:32px;width:211px;'>
+                                                                <style type="text/css">
+                                                                    #view_text_10006_274227685_txt ul{ list-style-position:inside;}
+                                                                </style>
+                                                                <div id='view_text_10006_274227685_txt'   style="cursor:default; height:100%; width:100%;"  >
+                                                                    <div class="editableContent">
+                                                                       {$v.info.content|raw}
+                                                                    </div>
+                                                                </div>
+                                                                <script>
+                                                                    Pagination('view_text_10006_274227685_txt',"首页","尾页","上一页","下一页");
+                                                                </script>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    {/volist}
+
+                                                </div>
+                                                <input type="hidden" id="HeightValue" value="537" />
+                                                <input type="hidden" id="WidthValue" value="764" />
+                                            </div>
+
+                                                <script type="text/javascript">
+                                                    var headeritem=$("#tab_10005 .w_tab_header .w_tab_header_item").length;
+                                                    if(headeritem>0) {
+                                                        $("#tab_10005").slide({
+                                                            titCell: ".w_tab_header .w_tab_header_item",
+                                                            mainCell: ".w_tab_container",
+
+                                                            trigger: "mouseover",
+                                                            delayTime: 1000,
+                                                            prevCell: null,
+                                                            nextCell: null
+                                                        });
+                                                    }
+                                                    $(function(){
+                                                        $("#tab_10005 .w_tab_header_group li").each(function(){
+                                                            if($(this).attr("disdata")!=null&&$(this).attr("disdata")!=0){
+                                                                $(this).css("background-image","url("+$(this).attr("disdata")+")");
+                                                            }
+                                                        })
+                                                    })
+                                                    function openUrl(url,target){
+                                                        if(url!=""){
+                                                            if(target=="当前窗口"||target=="顶层窗口")
+                                                            {
+                                                                window.location.href=url;
+                                                            }else
+                                                            {
+                                                                window.open(url,"_blank");
+                                                            }}
+                                                    }
+                                                </script></div>
+                                        </div>
+
+                                    </div>
+                                    <script type="text/javascript">
+                                        function setLayoutHeight() {
+                                            var bannerheight = $("#view_banner_10001_274227685").css("height");
+                                            $("#view_banner_10001_274227685").children(".yibuFrameContent").css("height", bannerheight);
+                                        };
+                                    </script></div>
+                            </div>
+                            </div></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+{include file="common/footer"/}

@@ -88,6 +88,8 @@ class EmptyController extends Common{
             return $this->fetch($template);
         }
     }
+
+
     public function info(){
         Db::name(DBNAME)->where('id',input('id'))->setInc('hits');
         $info = Db::name(DBNAME)->where('id',input('id'))->find();

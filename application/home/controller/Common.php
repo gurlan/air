@@ -76,6 +76,13 @@ class Common extends Controller{
         $this->changyan = unserialize($plugin['config_value']);
         $this->assign('changyan', $this->changyan);
         $this->assign('time', time());
+
+        //工作分类
+        $job =  Db::name('category')->where([['parentid','=',51],['ismenu','=',1]])->order('sort')->select();
+        foreach($job as $k=>$v){
+            $job[$k]['info'] = Db::name('page')->where(['id'=>$v['id']])->find();
+        }
+        $this->assign('job', $job);
     }
     public function _empty(){
         return $this->error('空操作，返回上次访问页面中...');

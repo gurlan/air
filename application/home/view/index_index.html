@@ -76,8 +76,7 @@
                                         <input id="canadjustwidth_view_image_3_843" type="hidden" value="False" />
                                         <input id="canadjustheight_view_image_3_843" type="hidden" value="False" />
 
-                                        <img class="lazyload" src="/static/air/img.bj.wezhan.cn/transparent.gif" data-original="http://img1.bj.wezhan.cn/content/sitefiles/2006291/images/6280832__c_JePEhgvMp-J-cZCW4xODpr7B350LbB3q0HI8G3oPUWSMezzP5to3JbMAIfGvfhYN4yZB4uetVa4TExmUpebXNErxgbENKGMK_1ee19a8f-be03-4f7f-8919-0a217398bdba_resize_picture.png" alt="" style="border:none; position:relative;" />
-                                    </a>
+                                        <img  src="{$sys.logo}"  alt="" style="border:none; position:relative;" />                                    </a>
                                 </div>
                                 </div>
                             </div>
@@ -111,7 +110,13 @@
                                         </li>
                                         {/volist}
                                     </ul>
-
+                                    <script>
+                                        $('#nav_view_navigator_8_{$num} .w_nav_item:gt(0)>h3>a').click(function(){
+                                            var url = $(this).parent().next().find('a:first').attr('href');
+                                            console.log(url);
+                                            window.location.href = url;
+                                        })
+                                    </script>
                                     <!--/nav-->
                                     <input type="hidden" id="HeightVariablesStr_view_navigator_8_843" value="$height:31px;$Item_height:31px;$SubItem_height:31px;" />
                                     <script>
